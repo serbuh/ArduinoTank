@@ -2,12 +2,12 @@ const int led = 13;
 const int HBEn1 = 2;
 const int HBEn2 = 3;
 
-//left motor
+//Right motor
 const int HBIn1 = 5;
 const int HBIn2 = 6;
-//right motor
-const int HBIn4 = HBIn1 + 5;
-const int HBIn3 = HBIn2 + 5;
+//Left motor
+const int HBIn3 = HBIn1 + 5;
+const int HBIn4 = HBIn2 + 5;
 
 typedef enum {LEFT, RIGHT} Side;
 
@@ -16,7 +16,6 @@ typedef enum {LEFT, RIGHT} Side;
 //const int JoySelPin = 3;
 
 int velocity;
-char incomingByte;
 
 
 void setup() {
@@ -49,13 +48,15 @@ void holdPosition(){
 }
 
 void moveForward(){
-  motorMove(LEFT,128,false);
-  motorMove(RIGHT,128,false);
+  digitalWrite(HBIn1, 0);
+  digitalWrite(HBIn2, 0);
+  digitalWrite(HBIn3, 0);
+  digitalWrite(HBIn4, 0);
 }
 
 void moveBackward(){
-  motorMove(LEFT,128,true);
-  motorMove(RIGHT,128,true);
+  motorMove(LEFT,255,true);
+  motorMove(RIGHT,255,true);
 }
 
 void rotateLeft(){
@@ -81,13 +82,19 @@ void moveRight(){
 void loop() {
   
   digitalWrite(led, HIGH);
-  moveForward();
+  analogWrite(HBIn1, 255);
+  analogWrite(HBIn2, 0);
+  analogWrite(HBIn3, 255);
+  analogWrite(HBIn4, 0);
   
   delay(3000);
 
   digitalWrite(led, LOW);
-  moveBackward();
-  
+  analogWrite(HBIn1, 0);
+  analogWrite(HBIn2, 255);
+  analogWrite(HBIn3, 0);
+  analogWrite(HBIn4, 255);
+    
   delay(3000);
 
   /*
