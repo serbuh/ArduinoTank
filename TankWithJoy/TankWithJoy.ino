@@ -15,9 +15,11 @@ const int JoyH = 0;
 const int JoyV = 1;
 //const int JoyS = 3;
 
-int Xval;
-int Yval;
+long Xinv, Y;
 
+int V, W; // V = R+L; W = R-L;
+
+int velL, velR;
 
 void setup() {
   // set all the other pins you're using as outputs:
@@ -41,7 +43,7 @@ void setup() {
   Serial.begin(115200);
 }
 
-//recieves (-255,-255) <= (velL,velR) <= (255,255)
+//recieves (-256,-256) <= (velL,velR) <= (256,256)
 void motorMove(int velL, int velR){
   analogWrite(LF, velL>0 ?  velL : 0);
   analogWrite(LB, velL<0 ? -velL : 0);
@@ -67,6 +69,48 @@ void moveRight(){
 }
 
 
+
+void JoyToMotor(){
+  Xinv = (analogRead(JoyH)/2-256);
+  Y = analogRead(JoyV)/2-256;
+
+  Xinv=(Xinv == -256) ? 255 : -Xinv;
+  Y=(Y == -256) ? -255 : Y;
+  
+  Serial.print("Xinv: ");
+  Serial.println(Xinv);
+  Serial.print("Y: ");
+  Serial.println(Y);
+
+/*
+  Serial.print("abs(Xinv): ");
+  Serial.println((abs(Xinv)));
+  Serial.print("256-abs(Xinv): ");
+  Serial.println((256-abs(Xinv)));
+  Serial.print("(256-abs(Xinv)*Y/256): ");
+  Serial.println((256-abs(Xinv)*Y/256));
+*/
+
+  V = (256-abs(Xinv))*Y/256 + Y;
+  W = (256-abs(Y))*Xinv/256 + Xinv;
+
+  Serial.print("V: ");
+  Serial.println(V);
+  Serial.print("W: ");
+  Serial.println(W);
+
+  velL = (V-W)/2;
+  velR = (V+W)/2;
+
+  Serial.print("velL: ");
+  Serial.println(velL);
+  Serial.print("velR: ");
+  Serial.println(velR);
+  Serial.println();
+  
+  motorMove(velL, velR);
+}
+
 void loop() {
 /*
   digitalWrite(led, HIGH);
@@ -91,16 +135,25 @@ void loop() {
   Serial.print("\n");
   */
 
-  Xval = analogRead(JoyH)/2-255;
-  Yval = analogRead(JoyV)/2-255;
+  JoyToMotor();
+  /*velL = 255;
+  velR = -255;
+  //motorMove(velL, velR);
+  digitalWrite(LF, HIGH);
+  digitalWrite(LB, LOW);
+  digitalWrite(RF, LOW);
+  digitalWrite(RB, HIGH);
   
-  Serial.print("X: ");
-  Serial.print(Xval);
-  Serial.print("\n");
-  Serial.print("Y: ");
-  Serial.println(Yval);
-  Serial.print("\n\n");
-  motorMove(-Xval, Yval);
-  delay(500);
+  delay(1000);
+
+  velL = -510;
+  velR = 510;
+  //motorMove(velL, velR);
+  analogWrite(LF, 0);
+  analogWrite(LB, -velL);
+  analogWrite(RF, velR);
+  analogWrite(RB, 0);
   
+  delay(1000);
+  */
 }
