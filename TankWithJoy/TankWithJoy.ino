@@ -11,11 +11,12 @@ const int RB = LB + 5;
 
 typedef enum {LEFT, RIGHT} Side;
 
-//const int JoyHorzPin = 0;
-//const int JoyVertPin = 1;
-//const int JoySelPin = 3;
+const int JoyH = 0;
+const int JoyV = 1;
+//const int JoyS = 3;
 
-int velocity;
+int Xval;
+int Yval;
 
 
 void setup() {
@@ -33,10 +34,14 @@ void setup() {
   pinMode(led, OUTPUT);
   digitalWrite(led, LOW);
   
-  //pinMode(JoySelPin, INPUT);
+  pinMode(JoyH, INPUT);
+  pinMode(JoyV, INPUT);
+  //pinMode(JoyS, INPUT);
 
+  Serial.begin(115200);
 }
 
+//recieves (-255,-255) <= (velL,velR) <= (255,255)
 void motorMove(int velL, int velR){
   analogWrite(LF, velL>0 ? velL : 0);
   analogWrite(LB, velL<0? -velL : 0);
@@ -63,7 +68,7 @@ void moveRight(){
 
 
 void loop() {
-  
+/*
   digitalWrite(led, HIGH);
   moveForward();
   
@@ -78,16 +83,24 @@ void loop() {
   moveLeft();
   
   delay(3000);
+*/
+  
   /*
   Serial.print("Switch:  ");
-  Serial.print(digitalRead(JoySelPin));
+  Serial.print(digitalRead(JoyS));
   Serial.print("\n");
-  Serial.print("X-axis: ");
-  Serial.print(analogRead(JoyHorzPin));
-  Serial.print("\n");
-  Serial.print("Y-axis: ");
-  Serial.println(analogRead(JoyVertPin));
-  Serial.print("\n\n");
-  delay(500);
   */
+
+  Xval = analogRead(JoyH)/2-255;
+  Yval = analogRead(JoyV)/2-255;
+  
+  Serial.print("X: ");
+  Serial.print(Xval);
+  Serial.print("\n");
+  Serial.print("Y: ");
+  Serial.println(Yval);
+  Serial.print("\n\n");
+  motorMove(-Xval, Yval);
+  delay(500);
+  
 }
