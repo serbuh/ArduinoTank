@@ -2,12 +2,12 @@ const int led = 13;
 const int HBEn1 = 2;
 const int HBEn2 = 3;
 
-//Right motor
-const int HBIn1 = 5;
-const int HBIn2 = 6;
 //Left motor
-const int HBIn3 = HBIn1 + 5;
-const int HBIn4 = HBIn2 + 5;
+const int LF = 5;
+const int LB = 6;
+//Right motor
+const int RF = LF + 5;
+const int RB = LB + 5;
 
 typedef enum {LEFT, RIGHT} Side;
 
@@ -22,10 +22,10 @@ void setup() {
   // set all the other pins you're using as outputs:
   pinMode(HBEn1, OUTPUT);
   pinMode(HBEn2, OUTPUT);
-  pinMode(HBIn1, OUTPUT);
-  pinMode(HBIn2, OUTPUT);
-  pinMode(HBIn3, OUTPUT);
-  pinMode(HBIn4, OUTPUT);
+  pinMode(LF, OUTPUT);
+  pinMode(LB, OUTPUT);
+  pinMode(RF, OUTPUT);
+  pinMode(RB, OUTPUT);
   digitalWrite(HBEn1, HIGH);
   digitalWrite(HBEn2, HIGH);
   
@@ -37,66 +37,47 @@ void setup() {
 
 }
 
-void motorMove(Side side, int velocity, boolean reverse){
-  analogWrite(HBIn1+side*5, velocity * !reverse);
-  analogWrite(HBIn2+side*5, velocity * reverse);
+void motorMove(int velL, int velR){
+  analogWrite(LF, velL>0 ? velL : 0);
+  analogWrite(LB, velL<0? -velL : 0);
+  analogWrite(RF, velR>0 ? velR : 0);
+  analogWrite(RB, velR<0 ? -velR : 0);
 }
 
-void holdPosition(){
-  motorMove(LEFT,0,false);
-  motorMove(RIGHT,0,false);
-}
 
 void moveForward(){
-  digitalWrite(HBIn1, 0);
-  digitalWrite(HBIn2, 0);
-  digitalWrite(HBIn3, 0);
-  digitalWrite(HBIn4, 0);
+  motorMove(255,255);
 }
 
 void moveBackward(){
-  motorMove(LEFT,255,true);
-  motorMove(RIGHT,255,true);
-}
-
-void rotateLeft(){
-  motorMove(LEFT,0,false);
-  motorMove(RIGHT,255,false);
-}
-
-void rotateRight(){
-  motorMove(LEFT,255,false);
-  motorMove(RIGHT,0,false);
+  motorMove(-255,-255);
 }
 
 void moveLeft(){
-  motorMove(LEFT,128,false);
-  motorMove(RIGHT,255,false);
+  motorMove(200,255);
 }
 
 void moveRight(){
-  motorMove(LEFT,255,false);
-  motorMove(RIGHT,128,false);
+  motorMove(255,200);
 }
+
 
 void loop() {
   
   digitalWrite(led, HIGH);
-  analogWrite(HBIn1, 255);
-  analogWrite(HBIn2, 0);
-  analogWrite(HBIn3, 255);
-  analogWrite(HBIn4, 0);
+  moveForward();
   
   delay(3000);
-
   digitalWrite(led, LOW);
-  analogWrite(HBIn1, 0);
-  analogWrite(HBIn2, 255);
-  analogWrite(HBIn3, 0);
-  analogWrite(HBIn4, 255);
-    
+  moveBackward();
+  
   delay(3000);
+  moveRight();
 
+  delay(3000);
+  moveLeft();
+  
+  delay(3000);
   /*
   Serial.print("Switch:  ");
   Serial.print(digitalRead(JoySelPin));
