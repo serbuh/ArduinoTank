@@ -43,9 +43,9 @@ void setup() {
 
 //recieves (-255,-255) <= (velL,velR) <= (255,255)
 void motorMove(int velL, int velR){
-  analogWrite(LF, velL>0 ? velL : 0);
-  analogWrite(LB, velL<0? -velL : 0);
-  analogWrite(RF, velR>0 ? velR : 0);
+  analogWrite(LF, velL>0 ?  velL : 0);
+  analogWrite(LB, velL<0 ? -velL : 0);
+  analogWrite(RF, velR>0 ?  velR : 0);
   analogWrite(RB, velR<0 ? -velR : 0);
 }
 
