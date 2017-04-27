@@ -29,7 +29,7 @@ const int joyHpin = 0;
 const int joyVpin = 1;
 //const int JoySpin = 3;
 int joyH = 512, joyV = 512;
-long Xinv, Y;
+long Xinv, X, Y;
 int V, W; // V = R+L; W = R-L;
 int velL, velR;
 
@@ -50,7 +50,10 @@ int BT_joyH = 512;
 int BT_joyV = 512;
 
 boolean newData = false;
-boolean BT_enabled;
+boolean BT_enabled = true;                           // BT or Joystick flag
+unsigned long previousMillis = 0;         // will store last time BT data was updated
+unsigned long currentMillis = 0;
+const long BT_timeout = 2000;             // BT timeout (milliseconds). Zero H,V values after timeout.
 
 //======================== Setup ========================
 
@@ -87,9 +90,6 @@ void setup() {
   BTserial.println("Arduino -> BT :)");
   BTserial.println("Expecting: <[Msg], [Hor], [Ver]>");
   BTserial.println();
-  
-  //--------------- Parameters ---------------
-  BT_enabled = true;                                // BT or Joystick flag
 }
 
 
@@ -122,32 +122,30 @@ void read_JoyHV(){
 
 
 //--------------- HV -> LR ---------------
-void HV_to_LR(){
-  Xinv = joyH/2-256;
-  Y = joyV/2-256;
+// HV: (0-1023) => LR: (-255,255)
+void HV_to_LR(){  
+  //Xinv: (0-1023) -> (-255,...,0,1,..,256)
+  //   X: (0-1023) -> (-256,..,-1,0,..,255)
+  //   Y: (0-1023) -> (-255,...,0,1,..,256)
+  Xinv = joyH/2-255;
+  X = -Xinv;
+  Y = joyV/2-255;
+  
+  //X: (-256,..,-1,0,..,255) -> (-255,..,0,0,..255)
+  //Y: (-255,...,0,1,..,256) -> (-255,..,0,0,..255)
+  X = (X < 0) ? (X + 1) : X;
+  Y = (Y > 0) ? (Y - 1) : Y;
+  
+  V = (255-abs(X))*Y/255 + Y;
+  W = (255-abs(Y))*X/255 + X;
 
-  Xinv=(Xinv == -256) ? 255 : -Xinv;
-  Y=(Y == -256) ? -255 : Y;
-  /*
-  Serial.print("Xinv: ");
-  Serial.println(Xinv);
-  Serial.print("Y: ");
-  Serial.println(Y);
-  */
-  V = (256-abs(Xinv))*Y/256 + Y;
-  W = (256-abs(Y))*Xinv/256 + Xinv;
-  /*
-  Serial.print("V: ");
-  Serial.println(V);
-  Serial.print("W: ");
-  Serial.println(W);
-  */
+  //vel: (-255,..,0,0,..255)
   velL = (V-W)/2;
   velR = (V+W)/2;
 }
 
 //--------------- LR -> Motors ---------------
-//recieves (-256,-256) <= (velL,velR) <= (256,256)
+// (-255,-255) <= (velL,velR) <= (255,255)
 void LR_to_Motors(int velL, int velR){
   if ((L_minThr <= velL) && (velL <= L_maxThr) && (R_minThr <= velR) && (velR <= R_maxThr)){  // Joystick center => Motors standby
     digitalWrite(led, LOW);
@@ -234,15 +232,21 @@ void moveRight(){
 //--------------- BT -> HV ---------------
 void BT_to_HV(){
   recvWithStartEndMarkers();
+  currentMillis = millis();
   if (newData == true) {
+    previousMillis = currentMillis; 
     strcpy(tempChars, receivedChars);
             // this temporary copy is necessary to protect the original data
             //   because strtok() used in parseData() replaces the commas with \0
     parseData_to_MHV();
     print_MHV();
-    joyH = BT_joyH;
-    joyV = BT_joyV;
+    joyH = constrain(BT_joyH, 0, 1023);
+    joyV = constrain(BT_joyV, 0, 1023);
     newData = false;
+  }
+  if (currentMillis - previousMillis >= BT_timeout){  // no data recieved for at least BT_timeout ms. Center VH.
+    joyH = 512;
+    joyV = 512;
   }
 }
 
