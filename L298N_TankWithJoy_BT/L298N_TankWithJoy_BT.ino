@@ -28,7 +28,7 @@ const int R_maxThr = 10;
 const int joyHpin = 0;
 const int joyVpin = 1;
 //const int JoySpin = 3;
-int joyH, joyV;
+int joyH = 512, joyV = 512;
 long Xinv, Y;
 int V, W; // V = R+L; W = R-L;
 int velL, velR;
@@ -46,11 +46,11 @@ char tempChars[numChars];        // temporary array for use when parsing
 
 // variables to hold the parsed data
 char BT_Msg[numChars] = {0};
-int BT_Dir = 0;
-int BT_Vel = 0;
+int BT_joyH = 512;
+int BT_joyV = 512;
 
 boolean newData = false;
-
+boolean BT_enabled;
 
 //======================== Setup ========================
 
@@ -85,31 +85,30 @@ void setup() {
   //--------------- Serial: Arduino <-> BT ---------------
   BTserial.begin(9600);
   BTserial.println("Arduino -> BT :)");
-  BTserial.println("Expecting: <[Msg], [Dir], [Vel]>");
+  BTserial.println("Expecting: <[Msg], [Hor], [Ver]>");
   BTserial.println();
+  
+  //--------------- Parameters ---------------
+  BT_enabled = true;                                // BT or Joystick flag
 }
 
 
 //======================== Loop ========================
 
 void loop() {
-  read_JoyHV(); //joyH, joyV
-  HV_to_LR();   //velL, velR
-  print_LR();
+  if(BT_enabled){ 
+    BT_to_HV();   // read HV from BT
+  } else {        
+    read_JoyHV(); // read HV from joystick
+  }               //joyH, joyV
+
+  //print_HV();
+    
+  HV_to_LR();     //velL, velR
+  
+  //print_LR();
+  
   LR_to_Motors(velL, velR);
-  
-  //BTtoDV();
-  
-  
-  
-  
-  
-  /*
-  //BT_to_PC();
-  //parse();
-  */
-  
-  
 }
 
 
@@ -232,15 +231,17 @@ void moveRight(){
 
 //======================== BT Functions ========================
 
-//--------------- ApplicationBT -> LR ---------------
-void BTtoMDV(){
+//--------------- BT -> HV ---------------
+void BT_to_HV(){
   recvWithStartEndMarkers();
   if (newData == true) {
     strcpy(tempChars, receivedChars);
             // this temporary copy is necessary to protect the original data
             //   because strtok() used in parseData() replaces the commas with \0
-    parseData();
-    print_Msg_Dir_Vel();
+    parseData_to_MHV();
+    print_MHV();
+    joyH = BT_joyH;
+    joyV = BT_joyV;
     newData = false;
   }
 }
@@ -278,7 +279,7 @@ void recvWithStartEndMarkers() {
 }
 
 
-void parseData() {      // split the data into its parts
+void parseData_to_MHV() {      // split the data into its parts
 
     char * strtokIndx; // this is used by strtok() as an index
 
@@ -286,21 +287,21 @@ void parseData() {      // split the data into its parts
     strcpy(BT_Msg, strtokIndx);    // copy it to BT_Msg
  
     strtokIndx = strtok(NULL, ",");       // this continues where the previous call left off
-    BT_Dir = atoi(strtokIndx);  // convert direction to integer
+    BT_joyH = atoi(strtokIndx);  // convert joystick horizontal to integer
 
     strtokIndx = strtok(NULL, ",");
-    BT_Vel = atoi(strtokIndx);  // convert velocity to integer
+    BT_joyV = atoi(strtokIndx);  // convert joystick vertical to integer
 
 }
 
 
-void print_Msg_Dir_Vel() {
+void print_MHV() {
     Serial.print("Msg: ");
     Serial.println(BT_Msg);
-    Serial.print("Dir: ");
-    Serial.println(BT_Dir);
-    Serial.print("Vel: ");
-    Serial.println(BT_Vel);
+    Serial.print("velL: ");
+    Serial.println(BT_joyH);
+    Serial.print("velR: ");
+    Serial.println(BT_joyV);
 }
 
 //--------------- Serial echo PC <-> BT ---------------
