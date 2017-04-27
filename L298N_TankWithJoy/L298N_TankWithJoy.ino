@@ -25,6 +25,10 @@ int velL, velR;
 // for motorMove func
 boolean dir1;
 boolean dir2;
+const int L_minThr = -10;
+const int L_maxThr = 10;
+const int R_minThr = -10;
+const int R_maxThr = 10;
 
 void setup() {
   // H-Bridge
@@ -95,11 +99,17 @@ void motorMove(int motor, int speed, int direction){
 
 //recieves (-256,-256) <= (velL,velR) <= (256,256)
 void moveLR(int velL, int velR){
-  motorMove(1, velL>=0 ? velL : -velL, velL>0 ? 0 : 1);
-  motorMove(0, velR>=0 ? velR : -velR, velR>0 ? 0 : 1);
+  if ((L_minThr <= velL) && (velL <= L_maxThr) && (R_minThr <= velR) && (velR <= R_maxThr)){  // Joystick center => Motors standby
+    digitalWrite(led, LOW);
+    motorStop();
+  } else {                                                                                    // Joystick move => Motors move
+    digitalWrite(led, HIGH);
+    motorMove(1, velL>=0 ? velL : -velL, velL>0 ? 0 : 1);
+    motorMove(0, velR>=0 ? velR : -velR, velR>0 ? 0 : 1);  
+  }
 }
 
-void stop(){
+void motorStop(){
 //enable standby  
   digitalWrite(STBY, LOW); 
 }
