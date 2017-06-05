@@ -31,7 +31,7 @@ void PC_to_BT(){
   // PC -> BT
   while (Serial.available() > 0) {
     delay(1);
-    if (Serial.available() >0)
+    if (Serial.available() > 0)
     {
       Serial.println(Serial.available());
       BT_data = Serial.read();

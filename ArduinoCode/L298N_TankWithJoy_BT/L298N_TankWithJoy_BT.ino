@@ -50,6 +50,8 @@ int BT_joyH = 512;
 int BT_joyV = 512;
 
 boolean newData = false;
+boolean BT_echo = true;                  //******** PARAMETER ******** echo BT to Serial console (disables parsing)
+                                          // false - use baud 115200
 boolean BT_enabled = true;                //******** PARAMETER ******** BT or Joystick flag
 unsigned long previousMillis = 0;         // will store last time BT data was updated
 unsigned long currentMillis = 0;
@@ -96,19 +98,26 @@ void setup() {
 //======================== Loop ========================
 
 void loop() {
-  if(BT_enabled){ 
-    BT_to_HV();   // read HV from BT
-  } else {        
-    read_JoyHV(); // read HV from joystick
-  }               //joyH, joyV
-
-  //print_HV();
+  if(BT_echo){ // echo BT msgs for debug purposes
+    BT_to_PC();
+    PC_to_BT(); 
+  }
+  else{
+    digitalWrite(led, HIGH);
+    if(BT_enabled){ 
+      BT_to_HV();   // read HV from BT
+    } else {        
+      read_JoyHV(); // read HV from joystick
+    }               //joyH, joyV  
     
-  HV_to_LR();     //velL, velR
+    //print_HV();
+    
+    HV_to_LR();     //velL, velR
   
-  //print_LR();
+    //print_LR();
   
-  LR_to_Motors(velL, velR);
+    LR_to_Motors(velL, velR);
+  }
 }
 
 
@@ -314,7 +323,7 @@ void PC_to_BT(){
   // PC -> BT
   while (Serial.available() > 0) {
     delay(1);
-    if (Serial.available() >0)
+    if (Serial.available() > 0)
     {
       Serial.println(Serial.available());
       BT_data = Serial.read();
