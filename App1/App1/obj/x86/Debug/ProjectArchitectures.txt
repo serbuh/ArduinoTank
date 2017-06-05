@@ -1,1 +1,1 @@
-c:\users\ykuznetc\documents\visual studio 2015\Projects\App1\App1\App1.csproj;x86
+C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\App1\App1\App1.csproj;x86

@@ -6,27 +6,77 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
-            <TextBlock Name="tbError"
+        <UserControl Loaded="UserControl_Loaded" Margin="-10,10,10,-10">
+            <UserControl.Resources>
+                <LinearGradientBrush x:Key="DarkA" EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF464646"/>
+                </LinearGradientBrush>
+                <LinearGradientBrush x:Key="DarkB" EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.238"/>
+                    <GradientStop Color="#FFC1C1C1"/>
+                    <GradientStop Color="#FF6F6F6F" Offset="0.059"/>
+                </LinearGradientBrush>
+
+                <SolidColorBrush x:Key="LightA" Color="#FFA0A0A0"></SolidColorBrush>
+                <LinearGradientBrush x:Key="LightB" EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FFC1C1C1"/>
+                    <GradientStop Color="#FF9B9191" Offset="0.013"/>
+                    <GradientStop Color="#FFB6B4B4" Offset="0.586"/>
+                </LinearGradientBrush>
+            </UserControl.Resources>
+        </UserControl>
+        <TextBlock Name="tbError"
              FontSize="40" />
             <Button x:Name="btnConnect"
           Content="Connect"
           Click="btnConnect_Click"
-          FontSize="40" />
+          FontSize="40" Margin="48,91,0,484" />
             <Button x:Name="btnDisconnect"
           Content="Disconnect"
           Click="btnDisconnect_Click"
-          FontSize="40" />
+          FontSize="40" Margin="48,161,0,414" />
             <TextBox x:Name="tbInput"
            Text="2"
-           FontSize="40" TextChanged="tbInput_TextChanged" />
+           FontSize="40" TextChanged="tbInput_TextChanged" Margin="48,231,194,316" />
             <Button x:Name="btnSend"
           Content="Send"
           Click="btnSend_Click"
-          FontSize="40" />
-        </StackPanel>
+          FontSize="40" Margin="48,329,0,246" />
+
+ 
+
+        <Grid DataContext="{Binding ElementName=JoystickControl}">
+            <Ellipse x:Name="ControlArea" 
+                 Height="{Binding OuterDiameter}" 
+                 Width="{Binding OuterDiameter}"
+                 Fill="{Binding InnerFill}"
+                 Stroke="{Binding OuterStroke}"
+                 StrokeThickness="{Binding OuterStrokeThickness}"
+                 StrokeDashArray="{Binding OuterStrokeDashArray}"
+                 StrokeDashCap="{Binding OuterStrokeDashCap}"
+                 StrokeDashOffset="{Binding OuterStrokeDashOffset}" Margin="50,382,50,0"
+                 />
+
+            <Ellipse x:Name="Controller" 
+                 Height="{Binding InnerDiameter}" 
+                 Width="{Binding InnerDiameter}"
+                 Fill="{Binding InnerFill}"
+                 Stroke="{Binding InnerStroke}"
+                 StrokeThickness="{Binding InnerStrokeThickness}"
+                 StrokeDashArray="{Binding InnerStrokeDashArray}"
+                 StrokeDashCap="{Binding InnerStrokeDashCap}"
+                 StrokeDashOffset="{Binding InnerStrokeDashOffset}"
+                 PointerPressed="Controller_PointerPressed" Margin="136,471,148,88">
+                <Ellipse.RenderTransform>
+                    <TranslateTransform x:Name="JoystickTransform"></TranslateTransform>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+        </Grid>
 
     </Grid>
 </Page>
