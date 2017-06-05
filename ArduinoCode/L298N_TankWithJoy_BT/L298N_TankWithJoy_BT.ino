@@ -52,7 +52,7 @@ int BT_joyV = 512;
 boolean newData = false;
 boolean BT_echo = false;                   //******** PARAMETER ******** echo BT to Serial console (disables parsing)
                                           //use baud 115200 in Serial Console
-boolean BT_enabled = true;                //******** PARAMETER ******** BT or Joystick flag
+boolean BT_enabled = false;                //******** PARAMETER ******** BT or Joystick flag
 unsigned long previousMillis = 0;         // will store last time BT data was updated
 unsigned long currentMillis = 0;
 const long BT_timeout = 2000;             // BT timeout (milliseconds). Zero H,V values after timeout.
@@ -103,7 +103,6 @@ void loop() {
     PC_to_BT(); 
   }
   else{
-    digitalWrite(led, HIGH);
     if(BT_enabled){ 
       BT_to_HV();   // read HV from BT
     } else {        
@@ -311,9 +310,9 @@ void parseData_to_MHV() {      // split the data into its parts
 void print_MHV() {
     Serial.print("Msg: ");
     Serial.println(BT_Msg);
-    Serial.print("velL: ");
+    Serial.print("joyH: ");
     Serial.println(BT_joyH);
-    Serial.print("velR: ");
+    Serial.print("joyV: ");
     Serial.println(BT_joyV);
 }
 
