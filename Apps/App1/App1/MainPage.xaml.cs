@@ -47,7 +47,7 @@ namespace App1
 
         private void printStatus(string msg)
         {
-            tbStatus.Text = msg + Environment.NewLine;
+            tbStatus.Text += msg + Environment.NewLine;
         }
 
         private void printStatusAppend(string msg)
@@ -163,12 +163,12 @@ namespace App1
         {
 
             int dummy;
-
+            /*
             if (!int.TryParse(tbInput.Text, out dummy))
             {
                 printError("btnSend_Click", "Invalid input");
             }
-
+            */
             var noOfCharsSent = await WriteAsync(tbInput.Text);
 
             if (noOfCharsSent != 0)

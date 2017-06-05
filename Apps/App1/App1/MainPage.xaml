@@ -11,10 +11,14 @@
         <StackPanel>
             <Button x:Name="btnConnect" Content="Connect" Click="btnConnect_Click" FontSize="20" HorizontalAlignment="Right" Margin="0,0,242,0" Width="118" />
             <Button x:Name="btnDisconnect" Content="Disconnect" Click="btnDisconnect_Click" FontSize="20" HorizontalAlignment="Left" Width="118" />
-            <TextBox x:Name="tbInput" Text=":)" FontSize="30" />
+            <TextBox x:Name="tbInput" Text="*Mssg,120,240#" FontSize="30" />
             <Button x:Name="btnSend" Content="Send" Click="btnSend_Click" FontSize="20" />
-            <TextBlock x:Name="tbStatus" TextWrapping="Wrap" Height="Auto" Text="Status" FontSize="10"/>
-            <TextBlock x:Name="tbError"  TextWrapping="Wrap" Height="Auto" FontSize="10" Foreground="Red" />
+            <ScrollViewer Height="200">
+                <TextBlock x:Name="tbStatus" TextWrapping="Wrap" Height="Auto" Text="Status" FontSize="10" Width="360"/>
+            </ScrollViewer>
+            <ScrollViewer Height="200">
+                <TextBlock x:Name="tbError"  TextWrapping="Wrap" Height="Auto" FontSize="10" Foreground="Red" />
+            </ScrollViewer>
         </StackPanel>
 
     </Grid>

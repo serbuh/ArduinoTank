@@ -15614,10 +15614,10 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "D:\\Arduino\\ArduinoTank\\App1\\App1\\App1.csproj",
+      "projectUniqueName": "D:\\Arduino\\ArduinoTank\\Apps\\App1\\App1\\App1.csproj",
       "projectName": "App1",
-      "projectPath": "D:\\Arduino\\ArduinoTank\\App1\\App1\\App1.csproj",
-      "projectJsonPath": "D:\\Arduino\\ArduinoTank\\App1\\App1\\project.json",
+      "projectPath": "D:\\Arduino\\ArduinoTank\\Apps\\App1\\App1\\App1.csproj",
+      "projectJsonPath": "D:\\Arduino\\ArduinoTank\\Apps\\App1\\App1\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {

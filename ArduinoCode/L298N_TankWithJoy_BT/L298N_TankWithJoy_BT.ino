@@ -50,8 +50,8 @@ int BT_joyH = 512;
 int BT_joyV = 512;
 
 boolean newData = false;
-boolean BT_echo = true;                  //******** PARAMETER ******** echo BT to Serial console (disables parsing)
-                                          // false - use baud 115200
+boolean BT_echo = false;                   //******** PARAMETER ******** echo BT to Serial console (disables parsing)
+                                          //use baud 115200 in Serial Console
 boolean BT_enabled = true;                //******** PARAMETER ******** BT or Joystick flag
 unsigned long previousMillis = 0;         // will store last time BT data was updated
 unsigned long currentMillis = 0;
@@ -262,8 +262,8 @@ void BT_to_HV(){
 void recvWithStartEndMarkers() {
     static boolean recvInProgress = false;
     static byte ndx = 0;
-    char startMarker = '<';
-    char endMarker = '>';
+    char startMarker = '*';
+    char endMarker = '#';
     char rc;
 
     while (BTserial.available() > 0 && newData == false) {

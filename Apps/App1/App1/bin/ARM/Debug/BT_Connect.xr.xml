@@ -27,12 +27,17 @@
       <RootProperty Name="Text" />
       <RootProperty Name="FontSize" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="Height" />
+      <RootProperty Name="Content" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Height" />
-      <RootProperty Name="Text" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Foreground" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="App1.MainPage" />
   </Roots.RootTypes>

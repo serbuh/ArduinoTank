@@ -10,22 +10,22 @@
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>9cbc6bc2-a70a-4130-a2f7-adac75d75061</PackageIdentityName>
     <PackageIdentityPublisher>CN=ykuznetc</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\Arduino\ArduinoTank\App1\App1\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\Arduino\ArduinoTank\Apps\App1\App1\obj\ARM\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>D:\Arduino\ArduinoTank\App1\App1\bin\ARM\Debug\AppX</LayoutDir>
+    <LayoutDir>D:\Arduino\ArduinoTank\Apps\App1\App1\bin\ARM\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\Arduino\ArduinoTank\App1\App1\bin\ARM\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="D:\Arduino\ArduinoTank\Apps\App1\App1\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\bin\ARM\Debug\BT_Connect.exe">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\bin\ARM\Debug\BT_Connect.exe">
       <PackagePath>entrypoint\BT_Connect.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Buh\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
@@ -337,47 +337,47 @@
     <AppxPackagedFile Include="C:\Users\Buh\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\bin\ARM\Debug\BT_Connect.xr.xml">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\bin\ARM\Debug\BT_Connect.xr.xml">
       <PackagePath>BT_Connect.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\App1\App1\bin\ARM\Debug\Core\BT_Connect.exe">
+    <AppxPackagedFile Include="D:\Arduino\ArduinoTank\Apps\App1\App1\bin\ARM\Debug\Core\BT_Connect.exe">
       <PackagePath>BT_Connect.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
