@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Roots >
+  <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="InnerDiameter" />
+    <RootPropertyPathName Name="InnerFill" />
+    <RootPropertyPathName Name="InnerStroke" />
+    <RootPropertyPathName Name="InnerStrokeThickness" />
+    <RootPropertyPathName Name="InnerStrokeDashArray" />
+    <RootPropertyPathName Name="InnerStrokeDashCap" />
+    <RootPropertyPathName Name="InnerStrokeDashOffset" />
+    <RootPropertyPathName Name="OuterDiameter" />
+    <RootPropertyPathName Name="OuterFill" />
+    <RootPropertyPathName Name="OuterStroke" />
+    <RootPropertyPathName Name="OuterStrokeThickness" />
+    <RootPropertyPathName Name="OuterStrokeDashArray" />
+    <RootPropertyPathName Name="OuterStrokeDashCap" />
+    <RootPropertyPathName Name="OuterStrokeDashOffset" />
+  </Roots.PropertyPathNames>
+  <Roots.RootTypes>
+    <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
+      <RootProperty Name="Resources" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.LinearGradientBrush">
+      <RootProperty Name="EndPoint" />
+      <RootProperty Name="StartPoint" />
+      <RootProperty Name="GradientStops" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.SolidColorBrush">
+      <RootProperty Name="Color" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.GradientStop">
+      <RootProperty Name="Color" />
+      <RootProperty Name="Offset" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Grid">
+      <RootProperty Name="DataContext" />
+      <RootProperty Name="Children" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="ElementName" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Shapes.Ellipse">
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Fill" />
+      <RootProperty Name="Stroke" />
+      <RootProperty Name="StrokeThickness" />
+      <RootProperty Name="StrokeDashArray" />
+      <RootProperty Name="StrokeDashCap" />
+      <RootProperty Name="StrokeDashOffset" />
+      <RootProperty Name="RenderTransform" />
+      <RootEvent Name="PointerPressed" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.TranslateTransform" />
+    <RootType FullName="JoystickUserControl.Joystick" />
+  </Roots.RootTypes>
+</Roots>

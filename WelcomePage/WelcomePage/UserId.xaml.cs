@@ -35,8 +35,7 @@ namespace WelcomePage
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            //var dataSender = new Sender();
-            //dataSender.Initialize();
+            App.StartTime = TimeUtils.CurrentTimeMillis();
             this.Frame.Navigate(typeof(Joystick), null);
         }
 
@@ -44,5 +43,11 @@ namespace WelcomePage
         {
             this.Frame.Navigate(typeof(Statistics), null);
         }
+
+        private void OK_Click(object sender, RoutedEventArgs e)
+        {
+            App.CurrentNick = Nickname.Text;            
+        }
+
     }
 }

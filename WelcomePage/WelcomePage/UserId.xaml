@@ -10,13 +10,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="/background.jpg"/>
         </Grid.Background>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="44,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="-1.15,-2.573" Width="269" Height="65"/>
-        <Button Click="StatisticsButton_Click" HorizontalAlignment="Left" Margin="0,440,0,0" VerticalAlignment="Top" Width="180" Background="#3300FF00" >
+
+        <Button Click="StatisticsButton_Click" HorizontalAlignment="Left" Margin="0,356,0,0" VerticalAlignment="Top" Width="180" Background="#3300FF00" >
             <StackPanel>
                 <Image Source="statistics.png" Height="43" RenderTransformOrigin="0.5,0.662" HorizontalAlignment="Left" Width="145"/>
             </StackPanel>
         </Button>
-        <Button Click="PlayButton_Click" HorizontalAlignment="Left" Margin="180,440,0,0" VerticalAlignment="Top" Width="180" Background="#33FFFF78">
+        <Button Click="PlayButton_Click" HorizontalAlignment="Left" Margin="180,356,0,0" VerticalAlignment="Top" Width="180" Background="#33FFFF78">
             <StackPanel>
                 <Image Source="play.png" Height="43" />
             </StackPanel>
@@ -25,11 +25,10 @@
         <StackPanel Margin="-3,0,3,0">
             <Image Source="Enter.png" HorizontalAlignment="Left" Height="100" Margin="4,99,-4,441" />
         </StackPanel>
-        <Button Click="BackButton_Click" Margin="0,532,0,56" Height="52" Width="80" Background="#33FFFFFF"  >
-            <StackPanel>
-                <Image Source="arrow.png" Height="43" />
-            </StackPanel>
-        </Button>
+        <TextBox Name="Nickname" FontFamily="Trebuchet MS" FontSize="32" HorizontalAlignment="Left" Margin="40,208,0,0" TextWrapping="Wrap" Text="  " VerticalAlignment="Top" Height="89" Width="175"/>
+        <Button Click="OK_Click" Content="OK" HorizontalAlignment="Left" Margin="233,208,0,0" VerticalAlignment="Top" Height="89" Width="85" Background="#330000FF"/>
+
+
 
     </Grid>
 </Page>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define OFFLINE_SYNC_ENABLED
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,6 +19,10 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.WindowsAzure.MobileServices;
 
+#if OFFLINE_SYNC_ENABLED
+        //using Microsoft.WindowsAzure.MobileServices.SQLiteStore;  // offline sync
+        using Microsoft.WindowsAzure.MobileServices.Sync;         // offline sync
+#endif
 
 namespace WelcomePage
 {
@@ -45,14 +51,20 @@ namespace WelcomePage
         /// 
         public static MobileServiceClient MobileService =
             new MobileServiceClient(
-            "https://tankplus.azurewebsites.net"
+            "https://testtank.azurewebsites.net"
         );
-        public class TodoItem
-        {
-            public string Id { get; set; }
-            public string Text { get; set; }
-            public bool Complete { get; set; }
-        }
+        // Global things for Azure
+        internal static MobileServiceCollection<TodoItem, TodoItem> users;
+#if OFFLINE_SYNC_ENABLED
+        internal static IMobileServiceSyncTable<TodoItem> usersTable = App.MobileService.GetSyncTable<TodoItem>(); // offline sync
+#else
+        internal static IMobileServiceTable<TodoItem> usersTable = App.MobileService.GetTable<TodoItem>();
+#endif
+
+        public static string CurrentNick;
+        public static double StartTime = 0;
+        public static double CurrentTime = 0;
+
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG

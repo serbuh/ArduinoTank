@@ -11,15 +11,15 @@
         <Grid.Background>
             <ImageBrush ImageSource="/background.jpg"/>
         </Grid.Background>
-        <Button Click="Button_Click"  HorizontalAlignment="Left" Margin="98,403,0,0" VerticalAlignment="Top" Height="89" Width="165" Background="#7FFFFF7D" >
+        <Button Click="Button_Click"  HorizontalAlignment="Left" Margin="91,371,0,0" VerticalAlignment="Top" Height="89" Width="165" Background="#7FFFFF7D" >
             <StackPanel>
                 <Image Source="start.png" Height="80" RenderTransformOrigin="0.5,0.662" HorizontalAlignment="Left" Width="145"/>
             </StackPanel>
         </Button>
-        <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="111" Margin="0,137,0,0" Stroke="Black" VerticalAlignment="Top" Width="360" />
-        
+        <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="115" Margin="0,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="360" />
+
         <StackPanel>
-            <Image Source="welcome.png" Height="80" Margin="0,153,0,407"/>
+            <Image Source="welcome.png" Height="85" Margin="4,153,-4,407"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -5,9 +5,30 @@
     xmlns:local="using:WelcomePage"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    xmlns:JoystickControl="using:JoystickUserControl">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Height="640" VerticalAlignment="Bottom">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="background_light.jpg"/>
+        </Grid.Background>
+        <JoystickControl:Joystick x:Name="myJoystick" Loaded="Joystick_Loaded"
+                                  InnerDiameter="100"
+                                  OuterDiameter="200"
+                                  Theme="Dark" Margin="73,276,61,148" OnJoystickPressed="Joystick_OnJoystickPressed" OnJoystickReleased="Joystick_OnJoystickReleased">
+        </JoystickControl:Joystick>
+        <Button Click="BridgeButton_Click" HorizontalAlignment="Left" Margin="0,152,0,0" VerticalAlignment="Top" Height="81" Width="185" Background="#3300FF00">
+            <StackPanel Margin="0,0.333,0,-0.333">
+                <Image Source="bride.png" HorizontalAlignment="Left" Height="44" Margin="6,0,0,0" Width="131" />
+            </StackPanel>
+        </Button>
+        <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="81" Margin="185,152,0,0" VerticalAlignment="Top" Width="175"/>
+        <TextBlock Name ="Time" FontFamily="Trebuchet MS"
+                    FontSize="48"
+                      FontStretch="Normal"
+                        HorizontalAlignment="Center" Margin="190,164,-10,0" TextWrapping="NoWrap" Text=" " VerticalAlignment="Top" Height="73" Width="180"/>
+        <Button Click="StopButton_Click" Content="STOP" HorizontalAlignment="Left" Margin="93,505,0,0" VerticalAlignment="Top" Height="57" Width="182" Background="#7F891010"/>
+
 
     </Grid>
 </Page>
