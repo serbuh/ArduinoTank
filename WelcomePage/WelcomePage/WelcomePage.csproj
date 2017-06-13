@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BT_Connection.cs" />
     <Compile Include="Joystick.xaml.cs">
       <DependentUpon>Joystick.xaml</DependentUpon>
     </Compile>
@@ -102,9 +103,13 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Score.xaml.cs">
+      <DependentUpon>Score.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Statistics.xaml.cs">
       <DependentUpon>Statistics.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TimeUtils.cs" />
     <Compile Include="ToDoItem.cs" />
     <Compile Include="UserId.xaml.cs">
       <DependentUpon>UserId.xaml</DependentUpon>
@@ -117,8 +122,11 @@
     <None Include="WelcomePage_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="again.png" />
     <Content Include="arrow.png" />
     <Content Include="background.jpg" />
+    <Content Include="background_light.jpg" />
+    <Content Include="best.png" />
     <Content Include="bride.png" />
     <Content Include="Enter.png" />
     <Content Include="play.png" />
@@ -132,6 +140,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Start.png" />
     <Content Include="statistics.png" />
+    <Content Include="time.png" />
     <Content Include="Welcome.png" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +155,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Score.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Statistics.xaml">
       <SubType>Designer</SubType>

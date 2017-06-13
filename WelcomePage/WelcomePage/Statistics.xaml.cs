@@ -14,18 +14,35 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.WindowsAzure.MobileServices;
 
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
+
+using System.Threading.Tasks;
+using Windows.UI.Popups;
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace WelcomePage
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// An empty page that can be used on its own or navigated sto within a Frame.
     /// </summary>
+    /// 
+
     public sealed partial class Statistics : Page
     {
+
+        // There will be Azure module
+        //  private MobileServiceCollection<ToDoItem, ToDoItem> items;
+
         public Statistics()
         {
             this.InitializeComponent();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(UserId), null);
         }
     }
 }

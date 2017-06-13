@@ -3,6 +3,15 @@
   "version": 2,
   "targets": {
     "UAP,Version=v10.0": {
+      "JoystickUserControl/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -11,9 +20,6 @@
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "6.0.4"
         },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
         "compile": {
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.Ext.dll": {},
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.dll": {}
@@ -1939,6 +1945,15 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
+      "JoystickUserControl/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -1947,9 +1962,6 @@
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "6.0.4"
         },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
         "compile": {
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.Ext.dll": {},
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.dll": {}
@@ -3741,6 +3753,15 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
+      "JoystickUserControl/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -3749,9 +3770,6 @@
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "6.0.4"
         },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
         "compile": {
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.Ext.dll": {},
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.dll": {}
@@ -5500,6 +5518,15 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
+      "JoystickUserControl/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -5508,9 +5535,6 @@
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "6.0.4"
         },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
         "compile": {
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.Ext.dll": {},
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.dll": {}
@@ -7311,6 +7335,15 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
+      "JoystickUserControl/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -7319,9 +7352,6 @@
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "6.0.4"
         },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
         "compile": {
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.Ext.dll": {},
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.dll": {}
@@ -9070,6 +9100,15 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
+      "JoystickUserControl/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -9078,9 +9117,6 @@
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "6.0.4"
         },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
         "compile": {
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.Ext.dll": {},
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.dll": {}
@@ -10881,6 +10917,15 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
+      "JoystickUserControl/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/JoystickUserControl.dll": {}
+        }
+      },
       "Microsoft.Azure.Mobile.Client/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -10889,9 +10934,6 @@
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "6.0.4"
         },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
         "compile": {
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.Ext.dll": {},
           "lib/netcore45/Microsoft.WindowsAzure.Mobile.dll": {}
@@ -12641,6 +12683,20 @@
     }
   },
   "libraries": {
+    "JoystickUserControl/1.1.3": {
+      "sha512": "mXMufQn4UwvRueppfBcSdGZu8xQAGithououdQp3a2XNd9oWpVUDuCMbi7cI3w45iZQDqCI/Gr1XKRPelO1KCQ==",
+      "type": "package",
+      "files": [
+        "JoystickUserControl.1.1.3.nupkg.sha512",
+        "JoystickUserControl.nuspec",
+        "lib/netcore50/JoystickUserControl.dll",
+        "lib/uap10.0/JoystickUserControl.dll",
+        "lib/uap10.0/JoystickUserControl.pdb",
+        "lib/uap10.0/JoystickUserControl.pri",
+        "lib/uap10.0/JoystickUserControl/Joystick.xbf",
+        "lib/uap10.0/JoystickUserControl/JoystickUserControl.xr.xml"
+      ]
+    },
     "Microsoft.Azure.Mobile.Client/3.1.0": {
       "sha512": "L/RF/9A/mMFifQsTBRmSPV3UpvG11LR+0vsm7KKkOW7pLeRmsAWFtfKRUKoEfgdi2XoOFSLkXk88w8jVXV5uJA==",
       "type": "package",
@@ -16140,9 +16196,12 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "JoystickUserControl >= 1.1.3",
       "Microsoft.Azure.Mobile.Client >= 3.1.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.1.0"
     ],
     "UAP,Version=v10.0": []
-  }
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
 }
