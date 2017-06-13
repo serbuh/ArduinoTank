@@ -73,7 +73,7 @@ void setup() {
   
   //--------------- LED ---------------
   pinMode(led, OUTPUT);
-  digitalWrite(led, LOW);
+  //digitalWrite(led, LOW);
 
   //--------------- Joystick ---------------
   pinMode(joyHpin, INPUT);
@@ -110,10 +110,11 @@ void loop() {
     }               //joyH, joyV  
     
     //print_HV();
+    print_MHV();
     
     HV_to_LR();     //velL, velR
   
-    //print_LR();
+    print_LR();
   
     LR_to_Motors(velL, velR);
   }
@@ -155,14 +156,14 @@ void HV_to_LR(){
 //--------------- LR -> Motors ---------------
 // (-255,-255) <= (velL,velR) <= (255,255)
 void LR_to_Motors(int velL, int velR){
-  if ((L_minThr <= velL) && (velL <= L_maxThr) && (R_minThr <= velR) && (velR <= R_maxThr)){  // Joystick center => Motors standby
-    digitalWrite(led, LOW);
-    motorsStop();
-  } else {                                                                                    // Joystick move => Motors move
+  //if ((L_minThr <= velL) && (velL <= L_maxThr) && (R_minThr <= velR) && (velR <= R_maxThr)){  // Joystick center => Motors standby
+  //  digitalWrite(led, LOW);
+  //  motorsStop();
+  //} else {                                                                                    // Joystick move => Motors move
     digitalWrite(led, HIGH);
     motorMove(1, velL>=0 ? velL : -velL, velL>0 ? 0 : 1);
     motorMove(0, velR>=0 ? velR : -velR, velR>0 ? 0 : 1);  
-  }
+  //}
 }
 
 //--------------- Print HV ---------------
@@ -234,6 +235,10 @@ void moveRight(){
   LR_to_Motors(255,0);
 }
 
+void fullRight(){
+  LR_to_Motors(-255,255);
+}
+
 
 //======================== BT Functions ========================
 
@@ -247,7 +252,7 @@ void BT_to_HV(){
             // this temporary copy is necessary to protect the original data
             //   because strtok() used in parseData() replaces the commas with \0
     parseData_to_MHV();
-    print_MHV();
+    //print_MHV();
     joyH = constrain(BT_joyH, 0, 1023);
     joyV = constrain(BT_joyV, 0, 1023);
     newData = false;
