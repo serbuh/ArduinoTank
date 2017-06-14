@@ -16,6 +16,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using Windows.Devices.Enumeration;
+using Windows.Devices.Bluetooth.Rfcomm;
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace WelcomePage
@@ -29,11 +32,12 @@ namespace WelcomePage
         private bool isBridgePressed;
         private BT_Connect bt_connect;
 
+
         public Joystick()
         {
-            bt_connect = BT_Connect.getBT_Conn();
             App.CurrentTime = TimeUtils.CurrentTimeMillis();//DateTime.UtcNow.Second;
             this.InitializeComponent();
+            bt_connect = BT_Connect.getBT_Conn();
         }
 //        protected override async void OnNavigatedTo(NavigationEventArgs e)
 //        {
@@ -109,6 +113,64 @@ namespace WelcomePage
 #if OFFLINE_SYNC_ENABLED
             await App.MobileService.SyncContext.PushAsync(); // offline sync
 #endif
+        }
+
+        private async void ConnectButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DeviceInformationCollection devices = await bt_connect.FindPairedDevicesAsync();
+
+                var my_device = devices.Single(x => x.Name == "HC-06");
+
+                print_devices(devices);
+
+                PrintStatusAppend("Connecting to " + my_device.Name);
+                bt_connect.IsConnected = await bt_connect.ConnectAsync(my_device);
+
+                if (bt_connect.IsConnected)
+                    PrintStatusAppend("Connected to " + my_device.Name);
+                else
+                    PrintStatusAppend("NOT connected to " + my_device.Name + " :(");
+            }
+            catch (Exception ex)
+            {
+                PrintStatusAppend("Exception! " + ex.Message);
+            }
+        }
+
+        private async void DisconnectButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                await bt_connect.DisconnectAsync();
+                PrintStatusAppend("Disconnected!");
+            }
+            catch (Exception ex)
+            {
+                PrintStatusAppend(ex.Message);
+            }
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            tbStatus.Text = "";
+        }
+
+        private void PrintStatusAppend(string msg)
+        {
+            tbStatus.Text += msg + Environment.NewLine;
+        }
+
+        private void print_devices(DeviceInformationCollection devices)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("#(Paired BT devices) = " + devices.Count);
+            foreach (var _device in devices)
+            {
+                builder.Append(Environment.NewLine + _device.Name);
+            }
+            PrintStatusAppend(builder.ToString());
         }
         // TODO: Clock; Getting string from Arduino
     }

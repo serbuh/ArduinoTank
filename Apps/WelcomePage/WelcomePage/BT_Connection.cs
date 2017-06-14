@@ -11,14 +11,13 @@ using Windows.UI.Xaml.Controls;
 
 namespace WelcomePage
 {
-    class BT_Connect { 
+    class BT_Connect
+    {
         private RfcommDeviceService _rfcommService;
         private StreamSocket _socket;
         public bool IsConnected;
         private DataReader _btReader;
         private DataWriter _btWriter;
-        private TextBlock _tbError;
-        private TextBlock _tbStatus;
 
         private static bool isInitialized = false;
         private static BT_Connect self;
@@ -33,16 +32,6 @@ namespace WelcomePage
             BT_Connect.self = this;
         }
 
-
-
-        /*public void init(TextBlock tbStatus, TextBlock tbError)
-        {
-            if (!isInitialized)
-            {
-                new BT_Connect(tbStatus,tbError);
-                isInitialized = true;
-            }
-        }*/
         public static BT_Connect getBT_Conn()
         {
             if (!isInitialized)
@@ -64,7 +53,10 @@ namespace WelcomePage
         public async Task<bool> ConnectAsync(DeviceInformation device)
         {
             _rfcommService = await RfcommDeviceService.FromIdAsync(device.Id);
-            if (_rfcommService == null) _tbError.Text += "_rfcommService is NULL :(";
+            if (_rfcommService == null)
+            {
+                throw new System.Exception("_rfcommService is NULL for the device (Name): " + device.Name + " (Consider enabling Blutooth in app manifest)");
+            }
             this._socket = new StreamSocket();
             try
             {
@@ -75,7 +67,7 @@ namespace WelcomePage
             }
             catch (Exception ex)
             {
-                printError("ConnectAsync", ex.Message);
+                throw ex;
             }
 
             _btReader = new DataReader(_socket.InputStream);
@@ -86,12 +78,38 @@ namespace WelcomePage
 
         public async Task<bool> DisconnectAsync()
         {
-            await _socket.CancelIOAsync();
-            _socket.Dispose();
-            _socket = null;
-            _rfcommService.Dispose();
-            _rfcommService = null;
-            return true;
+            try
+            {
+                await _socket.CancelIOAsync();
+                if (_btReader != null)
+                {
+                    _btReader.DetachStream();
+                    _btReader.Dispose();
+                    _btReader = null;
+                }
+                if (_btWriter != null)
+                {
+                    _btWriter.DetachStream();
+                    _btWriter.Dispose();
+                    _btWriter = null;
+                }
+                if (_socket != null)
+                {
+                    _socket.Dispose();
+                    _socket = null;
+                }
+                if (_rfcommService != null)
+                {
+                    _rfcommService.Dispose();
+                    _rfcommService = null;
+                }
+                IsConnected = false;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<uint> BTSendAsync(string msg)
@@ -108,8 +126,7 @@ namespace WelcomePage
             }
             catch (Exception ex)
             {
-                printError("WriteAsync", ex.Message);
-                return 0;
+                throw ex;
             }
         }
 
@@ -138,5 +155,5 @@ namespace WelcomePage
         {
             //_tbStatus.Text += msg + Environment.NewLine;
         }
-}
+    }
 }
