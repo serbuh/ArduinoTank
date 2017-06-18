@@ -24,15 +24,6 @@ const int L_maxThr = 10;
 const int R_minThr = -10;
 const int R_maxThr = 10;
 
-//--------------- Joystick ---------------
-const int joyHpin = 0;
-const int joyVpin = 1;
-//const int JoySpin = 3;
-int joyH = 512, joyV = 512;
-long Xinv, X, Y;
-int V, W; // V = R+L; W = R-L;
-int velL, velR;
-
 //--------------- BT ---------------
 const int BT_rx = 8;
 const int BT_tx = 9;
@@ -45,7 +36,7 @@ char receivedChars[numChars];
 char tempChars[numChars];        // temporary array for use when parsing
 
 // variables to hold the parsed data
-char BT_Msg[numChars] = {0};
+char BT_joyMsg[numChars] = {'S'};
 int BT_joyH = 512;
 int BT_joyV = 512;
 
@@ -56,6 +47,22 @@ boolean BT_enabled = true;                //******** PARAMETER ******** BT or Jo
 unsigned long previousMillis = 0;         // will store last time BT data was updated
 unsigned long currentMillis = 0;
 const long BT_timeout = 2000;             // BT timeout (milliseconds). Zero H,V values after timeout.
+
+//--------------- Joystick ---------------
+const int joyHpin = 0;
+const int joyVpin = 1;
+//const int JoySpin = 3;
+int joyH = 512, joyV = 512;
+char joyMsg[numChars] = {'S'};
+long Xinv, X, Y;
+int V, W; // V = R+L; W = R-L;
+int velL, velR;
+
+//--------------- Bridge Servo --------------- 
+#include <Servo.h>
+const int servoPin = 12;
+int servoVal = 0;
+Servo brdgServo;
 
 //======================== Setup ========================
 
@@ -79,6 +86,9 @@ void setup() {
   pinMode(joyHpin, INPUT);
   pinMode(joyVpin, INPUT);
   //pinMode(joySpin, INPUT);
+
+  //--------------- Bridge Servo --------------- 
+  brdgServo.attach(servoPin);
 
   //--------------- Serial: PC <-> Arduino ---------------
   Serial.begin(115200);
@@ -104,25 +114,27 @@ void loop() {
   }
   else{
     if(BT_enabled){ 
-      BT_to_HV();   // read HV from BT
+      BT_to_MHV();   // read MHV from BT
     } else {        
       read_JoyHV(); // read HV from joystick
-    }               //joyH, joyV  
+      strcpy(joyMsg, "S");
+    }               // joyH, joyV, joyMsg  
     
     //print_HV();
-    print_MHV();
+    //print_MHV();
     
     HV_to_LR();     //velL, velR
   
-    print_LR();
+    //print_LR();
   
     LR_to_Motors(velL, velR);
+
+    M_to_Servo(joyMsg);
   }
 }
 
 
 //======================== Functions ========================
-
 //--------------- Joystick -> HV ---------------
 void read_JoyHV(){
   joyH = analogRead(joyHpin);
@@ -153,6 +165,7 @@ void HV_to_LR(){
   velR = (V+W)/2;
 }
 
+
 //--------------- LR -> Motors ---------------
 // (-255,-255) <= (velL,velR) <= (255,255)
 void LR_to_Motors(int velL, int velR){
@@ -166,6 +179,22 @@ void LR_to_Motors(int velL, int velR){
   //}
 }
 
+
+//--------------- Msg -> Bridge Servo ---------------
+void M_to_Servo(char* joyMsg) {
+  if (joyMsg[0] == 'S') {
+    Serial.println("Stay");
+    brdgServo.write(90);
+  } else if (joyMsg[0] == 'U') {
+    Serial.println("Up");
+    brdgServo.write(115);
+  } else if (joyMsg[0] == 'D') {
+    Serial.println("Down");
+    brdgServo.write(65);
+  }
+}
+
+
 //--------------- Print HV ---------------
 void print_HV(){
   Serial.print("joyH: ");
@@ -174,6 +203,7 @@ void print_HV(){
   Serial.println(joyV);
   Serial.println();
 }
+
 
 //--------------- Print LR ---------------
 void print_LR(){
@@ -184,11 +214,13 @@ void print_LR(){
   Serial.println();
 }
 
+
 //--------------- Move Motors ---------------
 void motorsStop(){
 //enable standby  
   digitalWrite(STBY, LOW); 
 }
+
 
 void motorMove(int motor, int speed, int direction){
 //Move specific motor at speed and direction
@@ -217,6 +249,7 @@ void motorMove(int motor, int speed, int direction){
   }
 }
 
+
 //--------------- Motors Debug ---------------
 // Simple debug functions
 void moveForward(){
@@ -241,10 +274,8 @@ void fullRight(){
 
 
 //======================== BT Functions ========================
-
-//--------------- BT -> HV ---------------
-//todo BT -> MHV
-void BT_to_HV(){
+//--------------- BT -> MHV ---------------
+void BT_to_MHV(){
   recvWithStartEndMarkers();
   currentMillis = millis();
   if (newData == true) {
@@ -256,13 +287,16 @@ void BT_to_HV(){
     //print_MHV();
     joyH = constrain(BT_joyH, 0, 1023);
     joyV = constrain(BT_joyV, 0, 1023);
+    strcpy(joyMsg, BT_joyMsg);
     newData = false;
   }
   if (currentMillis - previousMillis >= BT_timeout){  // no data recieved for at least BT_timeout ms. Center VH.
     joyH = 512;
     joyV = 512;
+    strcpy(joyMsg, "S");
   }
 }
+
 
 void recvWithStartEndMarkers() {
     static boolean recvInProgress = false;
@@ -302,7 +336,7 @@ void parseData_to_MHV() {      // split the data into its parts
     char * strtokIndx; // this is used by strtok() as an index
 
     strtokIndx = strtok(tempChars,",");   // get the first part - the string
-    strcpy(BT_Msg, strtokIndx);    // copy it to BT_Msg
+    strcpy(BT_joyMsg, strtokIndx);    // copy it to BT_joyMsg
  
     strtokIndx = strtok(NULL, ",");       // this continues where the previous call left off
     BT_joyH = atoi(strtokIndx);  // convert joystick horizontal to integer
@@ -315,7 +349,7 @@ void parseData_to_MHV() {      // split the data into its parts
 
 void print_MHV() {
     Serial.print("Msg: ");
-    Serial.println(BT_Msg);
+    Serial.println(BT_joyMsg);
     Serial.print("joyH: ");
     Serial.println(BT_joyH);
     Serial.print("joyV: ");

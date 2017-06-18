@@ -243,7 +243,6 @@ void fullRight(){
 //======================== BT Functions ========================
 
 //--------------- BT -> HV ---------------
-//todo BT -> MHV
 void BT_to_HV(){
   recvWithStartEndMarkers();
   currentMillis = millis();
