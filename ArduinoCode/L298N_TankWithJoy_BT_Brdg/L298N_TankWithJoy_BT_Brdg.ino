@@ -62,6 +62,7 @@ int velL, velR;
 #include <Servo.h>
 const int servoPin = 12;
 int servoVal = 0;
+bool servo_already_stay = false;
 Servo brdgServo;
 
 //======================== Setup ========================
@@ -183,14 +184,25 @@ void LR_to_Motors(int velL, int velR){
 //--------------- Msg -> Bridge Servo ---------------
 void M_to_Servo(char* joyMsg) {
   if (joyMsg[0] == 'S') {
-    Serial.println("Stay");
-    brdgServo.write(90);
+    if(servo_already_stay){
+      pinMode(servoPin, INPUT); // "switch off" the servo
+      //Nothing to do. Already set to 90 degrees
+    } else {
+      Serial.println("Stay");
+      pinMode(servoPin, OUTPUT); // "switch on" the servo
+      brdgServo.write(90);
+      servo_already_stay = true;
+    }
   } else if (joyMsg[0] == 'U') {
-    Serial.println("Up");
-    brdgServo.write(115);
+    //Serial.println("Up");
+    pinMode(servoPin, OUTPUT); // "switch on" the servo
+    brdgServo.write(100);
+    servo_already_stay = false;
   } else if (joyMsg[0] == 'D') {
     Serial.println("Down");
-    brdgServo.write(65);
+    pinMode(servoPin, OUTPUT); // "switch on" the servo
+    brdgServo.write(80);
+    servo_already_stay = false;
   }
 }
 
