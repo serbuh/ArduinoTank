@@ -14,8 +14,8 @@
         <StackPanel Margin="-3,0,3,0">
             <Image Source="Images/best.png" HorizontalAlignment="Left" Height="61" Margin="32,99,0,441" Width="318" />
         </StackPanel>
-        <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="147" Margin="-3,180,0,0" VerticalAlignment="Top" Width="361"/>
-        <TextBlock x:Name="players" HorizontalAlignment="Left" Margin="2,184,-2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="143" Width="360"/>
+        <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="176" Margin="-3,151,0,0" VerticalAlignment="Top" Width="361"/>
+        <TextBlock Name="List" FontFamily="Trebuchet MS" FontSize="36" HorizontalAlignment="Center" Margin="2,151,-2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="176" Width="360"/>
         <Button Click="BackButton_Click" HorizontalAlignment="Left" Margin="22,336,0,0" VerticalAlignment="Top" Background="#4CFF0000" Height="77" Width="82">
             <StackPanel>
                 <Image Source="Images/arrow.png" Height="64" Margin="-4,0,0,0" ></Image>

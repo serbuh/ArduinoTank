@@ -51,5 +51,13 @@ namespace WelcomePage
             string timeToShow = strBuilder.ToString();
             return timeToShow;
         }
+        public static double TimeToDouble(string show)
+        {
+            double minuites = Convert.ToDouble(show[0].ToString());
+            minuites += Convert.ToDouble(show[1]);
+            double seconds = Convert.ToDouble(show[3].ToString());
+            seconds += Convert.ToDouble(show[4].ToString());
+            return (60 * minuites + seconds);
+        }
     }
 }

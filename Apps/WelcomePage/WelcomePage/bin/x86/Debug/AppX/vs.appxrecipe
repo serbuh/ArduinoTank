@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>342E1F82143DD72AFE6D6084FFA0063066E34D5E921AC761FA18042917416804</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>BD0A85942037EDD7C7A15E10092638DFA19E2346996534C5EEFE44E02D94C75F</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>7d9c38cb-e909-471d-a46c-03415cdefda7_1.0.0.0_x86__mqbschq8je8qc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>7d9c38cb-e909-471d-a46c-03415cdefda7_mqbschq8je8qc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>7d9c38cb-e909-471d-a46c-03415cdefda7</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-06-19T18:19:58.743</Modified>
+      <Modified>2017-06-19T21:41:19.197</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\WelcomePage.exe">
       <PackagePath>entrypoint\WelcomePage.exe</PackagePath>
-      <Modified>2017-06-19T18:19:53.362</Modified>
+      <Modified>2017-06-19T21:41:16.151</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\.nuget\packages\JoystickUserControl\1.1.3\lib\uap10.0\JoystickUserControl.dll">
       <PackagePath>JoystickUserControl.dll</PackagePath>
@@ -560,7 +560,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\WelcomePage.xr.xml">
       <PackagePath>WelcomePage.xr.xml</PackagePath>
-      <Modified>2017-06-19T18:19:52.857</Modified>
+      <Modified>2017-06-19T20:21:04.091</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -573,11 +573,11 @@
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-06-19T18:19:57.859</Modified>
+      <Modified>2017-06-19T21:41:18.326</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\Core\WelcomePage.exe">
       <PackagePath>WelcomePage.exe</PackagePath>
-      <Modified>2017-06-19T18:19:58.677</Modified>
+      <Modified>2017-06-19T21:41:19.141</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
