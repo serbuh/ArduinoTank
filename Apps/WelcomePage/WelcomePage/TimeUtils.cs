@@ -33,5 +33,23 @@ namespace WelcomePage
             string timeToShow = strBuilder.ToString();
             return timeToShow;
         }
+        public static string TimeToShow(double time)
+        {
+            int minuites = Convert.ToInt32(Math.Floor(time / 60));
+            int seconds = Convert.ToInt32(Math.Floor(time % 60));
+            var strBuilder = new StringBuilder();
+            if (minuites < 10)
+            {
+                strBuilder.Append("0");
+            }
+            strBuilder.Append(minuites.ToString()).Append(":");
+            if (seconds < 10)
+            {
+                strBuilder.Append("0");
+            }
+            strBuilder.Append(seconds.ToString());
+            string timeToShow = strBuilder.ToString();
+            return timeToShow;
+        }
     }
 }

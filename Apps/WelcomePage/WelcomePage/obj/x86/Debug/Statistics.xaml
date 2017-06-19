@@ -9,16 +9,16 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="background_light.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="Images/background_light.jpg"/>
         </Grid.Background>
         <StackPanel Margin="-3,0,3,0">
-            <Image Source="best.png" HorizontalAlignment="Left" Height="61" Margin="32,99,0,441" Width="318" />
+            <Image Source="Images/best.png" HorizontalAlignment="Left" Height="61" Margin="32,99,0,441" Width="318" />
         </StackPanel>
         <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="147" Margin="-3,180,0,0" VerticalAlignment="Top" Width="361"/>
         <TextBlock x:ConnectionId='1' x:Name="players" HorizontalAlignment="Left" Margin="2,184,-2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="143" Width="360"/>
         <Button x:ConnectionId='2'                          HorizontalAlignment="Left" Margin="22,336,0,0" VerticalAlignment="Top" Background="#4CFF0000" Height="77" Width="82">
             <StackPanel>
-                <Image Source="arrow.png" Height="64" Margin="-4,0,0,0" ></Image>
+                <Image Source="Images/arrow.png" Height="64" Margin="-4,0,0,0" ></Image>
             </StackPanel>
         </Button>
 

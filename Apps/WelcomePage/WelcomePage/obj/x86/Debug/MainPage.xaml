@@ -9,17 +9,17 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/background.jpg"/>
+            <ImageBrush ImageSource="Images/background.jpg"/>
         </Grid.Background>
         <Button x:ConnectionId='1'                       HorizontalAlignment="Left" Margin="91,371,0,0" VerticalAlignment="Top" Height="89" Width="165" Background="#7FFFFF7D" >
             <StackPanel>
-                <Image Source="start.png" Height="80" RenderTransformOrigin="0.5,0.662" HorizontalAlignment="Left" Width="145"/>
+                <Image Source="Images/Start.png" Height="80" RenderTransformOrigin="0.5,0.662" HorizontalAlignment="Left" Width="145"/>
             </StackPanel>
         </Button>
         <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="115" Margin="0,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="360" />
 
         <StackPanel>
-            <Image Source="welcome.png" Height="85" Margin="4,153,-4,407"/>
+            <Image Source="Images/Welcome.png" Height="85" Margin="4,153,-4,407"/>
         </StackPanel>
     </Grid>
 </Page>

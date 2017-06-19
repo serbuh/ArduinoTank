@@ -96,23 +96,14 @@ namespace WelcomePage
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
-            //this.AddUser();
-            //App.CurrentTime = (TimeUtils.CurrentTimeMillis() - App.StartTime) / 1000.0 ;
+            this.AddUser();
             this.Frame.Navigate(typeof(Score), null);
         }
 
         private async void AddUser()
         {
-            TodoItem todoItem = new TodoItem { Text = App.CurrentNick, Time = App.CurrentTime.ToString() };
-            await InsertTodoItem(todoItem);
-        }
-        private async Task InsertTodoItem(TodoItem todoItem)
-        {
+            TodoItem todoItem = new TodoItem { Nickname = App.CurrentNick, Time = TimeUtils.TimeToShow(App.CurrentTime) };
             await App.usersTable.InsertAsync(todoItem);
-            //App.users.Add(todoItem);
-#if OFFLINE_SYNC_ENABLED
-            await App.MobileService.SyncContext.PushAsync(); // offline sync
-#endif
         }
 
         private async void ConnectButton_Click(object sender, RoutedEventArgs e)

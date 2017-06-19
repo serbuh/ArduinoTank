@@ -11,11 +11,8 @@ namespace WelcomePage
     {
         public string Id { get; set; }
 
-        [JsonProperty(PropertyName = "text")]
-        public string Text { get; set; }
-
-        [JsonProperty(PropertyName = "complete")]
-        public bool Complete { get; set; }
+        [JsonProperty(PropertyName = "nickname")]
+        public string Nickname { get; set; }
 
         [JsonProperty(PropertyName = "time")]
         public string Time { get; set; }
