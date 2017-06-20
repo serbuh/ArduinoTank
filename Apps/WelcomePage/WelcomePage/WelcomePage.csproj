@@ -127,6 +127,7 @@
     <Content Include="Assets\Square150x150Logo.scale-400.png" />
     <Content Include="bridgedown.png" />
     <Content Include="bridgeup.png" />
+    <Content Include="exit.png" />
     <Content Include="Images\again.png" />
     <Content Include="Images\arrow.png" />
     <Content Include="Images\background.jpg" />
@@ -135,6 +136,7 @@
     <Content Include="Images\bridge.png" />
     <Content Include="Images\Enter.png" />
     <Content Include="Images\play.png" />
+    <Content Include="logo.png" />
     <Content Include="ok.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
