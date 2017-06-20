@@ -1,4 +1,4 @@
-﻿#define OFFLINE_SYNC_ENABLED
+﻿//#define OFFLINE_SYNC_ENABLED
 
 using System;
 using System.Collections.Generic;
@@ -51,17 +51,16 @@ namespace WelcomePage
         /// 
         public static MobileServiceClient MobileService =
             new MobileServiceClient(
-            "https://testtank.azurewebsites.net"
+            "https://btank.azurewebsites.net"
         );
         // Global things for Azure
-        internal static MobileServiceCollection<TodoItem, TodoItem> users;
 #if OFFLINE_SYNC_ENABLED
         internal static IMobileServiceSyncTable<TodoItem> usersTable = App.MobileService.GetSyncTable<TodoItem>(); // offline sync
 #else
         internal static IMobileServiceTable<TodoItem> usersTable = App.MobileService.GetTable<TodoItem>();
 #endif
 
-        public static string CurrentNick;
+        public static string CurrentNick = "";
         public static double StartTime = 0;
         public static double CurrentTime = 0;
 

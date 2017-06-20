@@ -30,61 +30,17 @@ namespace WelcomePage
         {
             this.InitializeComponent();
 
-            //int minuites = Convert.ToInt32 (App.CurrentTime / 60);
-            //int seconds = Convert.ToInt32 (App.CurrentTime % 60);
-            //var strBuilder = new StringBuilder();
-            //strBuilder.Append(minuites.ToString()).Append(":").Append(seconds.ToString());
-            //string timeToShow = strBuilder.ToString();
-            Time.Text = TimeUtils.CurrentTimeToShow();
-            //this.AddUser();
-            //this.GetTime();
         }
-        //private async void AddUser()
-        //{
-        //     TodoItem todoItem = new TodoItem { Nickname = App.CurrentNick, Time = App.CurrentTime };
-        //     await InsertTodoItem(todoItem);
-        //}
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            Time.Text = TimeUtils.CurrentTimeToShow();
+        }
 
-        //private async void GetTime() 
-        //{
-        //    //var usersCurrent = 
-        //    //    await App.usersTable.Where(u => u.Nickname == App.CurrentNick).ToListAsync();
-        //    //IMobileServiceTableQuery<TodoItem> query = App.usersTable.Where(u => u.Nickname == App.CurrentNick);
-        //    try
-        //    {
-        //        //var list = await query.ToListAsync();
-        //        //var user = list.First();
-        //        //double time = user.Time;
-        //        //Time.Text = time.ToString();
-
-
-        //        //var names = await App.usersTable.Where(u => u.Nickname == App.CurrentNick)
-        //        //                                .Select(u => u.Time)
-        //        //                                .ToEnumerableAsync();
-        //        //double time = names.FirstOrDefault();
-        //        //Time.Text = time.ToString();
-
-
-        //        // Danny
-        //        var dataUser = App.users.FirstOrDefault(user => user.Nickname == App.CurrentNick && user.Time == App.CurrentTime);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine("Exception Message: {0}", ex.Message);
-        //    }
-        //}
 
         private void NewGame_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(UserId), null);
         }
 
-        //private async Task InsertTodoItem(TodoItem todoItem)
-        //{
-        //    // This code inserts a new TodoItem into the database. After the operation completes
-        //    // and the mobile app backend has assigned an id, the item is added to the CollectionView.
-        //    await App.usersTable.InsertAsync(todoItem);
-        //    //App.users.Add(todoItem);
-        //}
     }
 }

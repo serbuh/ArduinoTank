@@ -1,1 +1,1 @@
-D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\WelcomePage.csproj;x86
+C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\WelcomePage.csproj;x86

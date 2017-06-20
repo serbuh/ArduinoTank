@@ -39,12 +39,7 @@ namespace WelcomePage
             this.InitializeComponent();
             bt_connect = BT_Connect.getBT_Conn();
         }
-//        protected override async void OnNavigatedTo(NavigationEventArgs e)
-//        {
-//#if OFFLINE_SYNC_ENABLED
-//            await InitLocalStoreAsync(); // offline sync
-//#endif
-//        }
+
 
         public double Map(double x, double in_min, double in_max, double out_min, double out_max)
         {
@@ -55,9 +50,15 @@ namespace WelcomePage
         {
             Stopwatch stopwatch = Stopwatch.StartNew();
             var strBuilder = new StringBuilder();
-            while (true)
+            while (true) // form a string. (E.g. *S,512,512# or *U,512,512# or *S,1023,512#)
             {
-                strBuilder.Append("*").Append(isBridgePressed ? "U," : "D,");
+                if (BridgeDown.IsPressed)
+                    strBuilder.Append("*D,");
+                else if (BridgeUp.IsPressed)
+                    strBuilder.Append("*U,");
+                else
+                    strBuilder.Append("*S,");
+
                 if (isJoystickPressed)
                 {
                     double x_norm = Map(myJoystick.XValue, 1, -1, 0, 1023);
@@ -86,34 +87,21 @@ namespace WelcomePage
             isJoystickPressed = false;
         }
 
-        private void BridgeButton_Click(object sender, RoutedEventArgs e)
-        {
-            //isBridgePressed = true;
-            // DELAY
-            //isBridgePressed = false;
-            return;
-        }
+
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
-            //this.AddUser();
-            //App.CurrentTime = (TimeUtils.CurrentTimeMillis() - App.StartTime) / 1000.0 ;
+            this.AddUser();
             this.Frame.Navigate(typeof(Score), null);
         }
 
         private async void AddUser()
         {
-            TodoItem todoItem = new TodoItem { Text = App.CurrentNick, Time = App.CurrentTime.ToString() };
-            await InsertTodoItem(todoItem);
-        }
-        private async Task InsertTodoItem(TodoItem todoItem)
-        {
+            TodoItem todoItem = new TodoItem { Nickname = App.CurrentNick, Time = TimeUtils.TimeToShow(App.CurrentTime) };
             await App.usersTable.InsertAsync(todoItem);
-            //App.users.Add(todoItem);
-#if OFFLINE_SYNC_ENABLED
-            await App.MobileService.SyncContext.PushAsync(); // offline sync
-#endif
         }
+
+
 
         private async void ConnectButton_Click(object sender, RoutedEventArgs e)
         {
@@ -172,6 +160,6 @@ namespace WelcomePage
             }
             PrintStatusAppend(builder.ToString());
         }
-        // TODO: Clock; Getting string from Arduino
+        //TODO: Clock; Getting string from Arduino
     }
 }

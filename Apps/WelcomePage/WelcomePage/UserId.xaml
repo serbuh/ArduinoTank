@@ -25,8 +25,13 @@
         <StackPanel Margin="-3,0,3,0">
             <Image Source="Images/Enter.png" HorizontalAlignment="Left" Height="100" Margin="4,99,-4,441" />
         </StackPanel>
-        <TextBox Name="Nickname" FontFamily="Trebuchet MS" FontSize="32" HorizontalAlignment="Left" Margin="40,208,0,0" TextWrapping="Wrap" Text="  " VerticalAlignment="Top" Height="89" Width="175"/>
-        <Button Click="OK_Click" Content="OK" HorizontalAlignment="Left" Margin="233,208,0,0" VerticalAlignment="Top" Height="89" Width="85" Background="#330000FF"/>
+        <TextBox Name="Nickname" FontFamily="Trebuchet MS" FontSize="40" HorizontalAlignment="Left" Margin="40,208,0,0" TextWrapping="Wrap" Text="  " VerticalAlignment="Top" Height="89" Width="175" SelectionHighlightColor="#006B69D6"/>
+        <Button Name="OK"  Click="OK_Click" HorizontalAlignment="Left" Margin="233,208,0,0" VerticalAlignment="Top" Height="89" Width="85" Background="#330000FF">
+            <StackPanel Margin="-10,-27.333,-10,-28">
+                <Image Source="ok.png" Height="117" Margin="-12,15,-42,0" />
+            </StackPanel>
+        </Button>
+        <TextBox Name="Error"  FontFamily="Trebuchet MS" FontSize="23" IsColorFontEnabled="True" HorizontalAlignment="Center" Margin="5,411,2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="353" Background="Transparent" BorderBrush="{x:Null}"/>
 
 
 
