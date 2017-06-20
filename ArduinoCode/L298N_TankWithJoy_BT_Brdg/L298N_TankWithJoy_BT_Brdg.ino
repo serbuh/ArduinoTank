@@ -188,7 +188,7 @@ void M_to_Servo(char* joyMsg) {
       pinMode(servoPin, INPUT); // "switch off" the servo
       //Nothing to do. Already set to 90 degrees
     } else {
-      Serial.println("Stay");
+      //Serial.println("Stay");
       pinMode(servoPin, OUTPUT); // "switch on" the servo
       brdgServo.write(90);
       servo_already_stay = true;
@@ -199,7 +199,7 @@ void M_to_Servo(char* joyMsg) {
     brdgServo.write(100);
     servo_already_stay = false;
   } else if (joyMsg[0] == 'D') {
-    Serial.println("Down");
+    //Serial.println("Down");
     pinMode(servoPin, OUTPUT); // "switch on" the servo
     brdgServo.write(80);
     servo_already_stay = false;
