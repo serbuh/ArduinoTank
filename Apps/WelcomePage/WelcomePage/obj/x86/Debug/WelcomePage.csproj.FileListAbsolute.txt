@@ -444,8 +444,6 @@ D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\MultipleQualif
 D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\JoystickUserControl.pri.xml
 D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\Microsoft.WindowsAzure.Mobile.Ext.pri.xml
 D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\ProjectArchitectures.txt
-C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\WelcomePage.exe
-C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\WelcomePage.pdb
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\App.xbf
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\Joystick.xbf
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\MainPage.xbf
@@ -570,7 +568,6 @@ C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\w
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\System.Xml.XDocument.dll
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\System.Xml.XmlDocument.dll
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\System.Xml.XmlSerializer.dll
-C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\WelcomePage.csprojResolveAssemblyReference.cache
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\App.g.i.cs
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\App.g.cs
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\Joystick.g.i.cs
@@ -597,6 +594,8 @@ C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\w
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\Statistics.xbf
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\UserId.xbf
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\WelcomePage.exe
+C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\WelcomePage.pdb
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\ResourceHandlingTask.state
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\FxResources.Microsoft.CSharp.SR.resw
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\FxResources.Microsoft.VisualBasic.SR.resw
@@ -667,3 +666,4 @@ C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\w
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\JoystickUserControl.pri.xml
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\Microsoft.WindowsAzure.Mobile.Ext.pri.xml
 C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\obj\x86\Debug\WelcomePage.csprojResolveAssemblyReference.cache

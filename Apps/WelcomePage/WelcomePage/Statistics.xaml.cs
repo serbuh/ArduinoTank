@@ -51,11 +51,17 @@ namespace WelcomePage
             int size = list.Count();
             int toScreen = (size < 4 ? size : 4);
             var strBuilder = new StringBuilder();
-            for (int i = 0; i < toScreen; i++)
+
+            for (int i = 0; i < size; i++)
             {
+                //await App.usersTable.DeleteAsync(list[i]);
                 strBuilder.Append(list[i].Nickname).Append(" ").Append(list[i].Time).Append("\n");
             }
-            List.Text = strBuilder.ToString();
+            if (strBuilder.Length!=0)
+            {
+                List.Text = strBuilder.ToString();
+            }
+            
         }
 
         

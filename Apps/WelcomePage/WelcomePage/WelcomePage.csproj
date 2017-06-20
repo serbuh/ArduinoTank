@@ -123,6 +123,10 @@
     <None Include="WelcomePage_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="bridgedown.png" />
+    <Content Include="bridgeup.png" />
     <Content Include="Images\again.png" />
     <Content Include="Images\arrow.png" />
     <Content Include="Images\background.jpg" />
@@ -131,6 +135,7 @@
     <Content Include="Images\bridge.png" />
     <Content Include="Images\Enter.png" />
     <Content Include="Images\play.png" />
+    <Content Include="ok.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -143,6 +148,7 @@
     <Content Include="Images\statistics.png" />
     <Content Include="Images\time.png" />
     <Content Include="Images\Welcome.png" />
+    <Content Include="statistics.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

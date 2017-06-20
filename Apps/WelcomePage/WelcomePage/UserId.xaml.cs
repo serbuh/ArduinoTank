@@ -35,8 +35,11 @@ namespace WelcomePage
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            App.StartTime = TimeUtils.CurrentTimeMillis();
-            this.Frame.Navigate(typeof(Joystick), null);
+            if (!string.IsNullOrWhiteSpace(App.CurrentNick))
+            {
+                App.StartTime = TimeUtils.CurrentTimeMillis();
+                this.Frame.Navigate(typeof(Joystick), null);
+            }
         }
 
         private void StatisticsButton_Click(object sender, RoutedEventArgs e)
@@ -46,7 +49,24 @@ namespace WelcomePage
 
         private void OK_Click(object sender, RoutedEventArgs e)
         {
-            App.CurrentNick = Nickname.Text;            
+            App.CurrentNick = Nickname.Text;
+            if (string.IsNullOrWhiteSpace(App.CurrentNick))
+            {
+                Error.Text = "      Please enter your name";
+                Error.Foreground = new SolidColorBrush(Windows.UI.Colors.Red);
+            }
+            else
+            {
+                Error.Text = "";
+            }
+        }
+
+        private void TextInput_KeyDown(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter) {
+                OK.Focus(FocusState.Programmatic);
+              
+            }
         }
 
     }

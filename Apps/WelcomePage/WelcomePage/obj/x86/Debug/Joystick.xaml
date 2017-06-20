@@ -15,26 +15,33 @@
         <JoystickControl:Joystick x:ConnectionId='1' x:Name="myJoystick"                         
                                   InnerDiameter="100"
                                   OuterDiameter="200"
-                                  Theme="Dark" Margin="73,276,61,148"                                                                                                >
+                                  Theme="Dark" Margin="73,297,61,127"                                                                                                >
         </JoystickControl:Joystick>
-        <Button x:ConnectionId='2'                            HorizontalAlignment="Left" Margin="0,152,0,0" VerticalAlignment="Top" Height="81" Width="185" Background="#3300FF00">
-            <StackPanel Margin="0,0.333,0,-0.333">
-                <Image Source="Images/bridge.png" HorizontalAlignment="Left" Height="44" Margin="6,0,0,0" Width="131" />
+        <Button x:ConnectionId='2'                        HorizontalAlignment="Left" Margin="0,185,0,0" VerticalAlignment="Top" Height="68" Width="185" Background="#3300FF00">
+            <StackPanel>
+                <Image Source="bridgedown.png" Height="48" HorizontalAlignment="Left" Width="185" Margin="-6,10,-14,0" />
             </StackPanel>
         </Button>
-        <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="81" Margin="185,152,0,0" VerticalAlignment="Top" Width="175"/>
-        <TextBlock x:ConnectionId='3' Name ="Time" FontFamily="Trebuchet MS"
-                    FontSize="48"
-                      FontStretch="Normal"
-                        HorizontalAlignment="Center" Margin="190,164,0,0" TextWrapping="NoWrap" Text=" " VerticalAlignment="Top" Height="69" Width="170"/>
-        <Button x:ConnectionId='4' Content="STOP" HorizontalAlignment="Left" Margin="93,505,0,0" VerticalAlignment="Top" Height="57" Width="182" Background="#7F891010"                          />
-        <Button x:ConnectionId='5' Content="Сonnect" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Background="#7F891010" Width="90"                            />
-        <Button x:ConnectionId='6' Content="Disconnect" HorizontalAlignment="Left" Margin="131,90,0,0" VerticalAlignment="Top" Background="#7F891010" Width="100"                               />
-        <Button x:ConnectionId='7' Content="Clear" HorizontalAlignment="Left" Margin="260,90,0,0" VerticalAlignment="Top" Background="#7F891010" Width="90"                          />
-        <ScrollViewer HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Height="200">
-            <TextBlock x:ConnectionId='8' x:Name="tbStatus" TextWrapping="Wrap" Height="Auto" Text="" FontSize="10" Width="360"/>
-        </ScrollViewer>
 
+        <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="136" Margin="185,118,0,0" VerticalAlignment="Top" Width="175"/>
+        <TextBlock x:ConnectionId='3' Name ="Time" FontFamily="Trebuchet MS"
+                    FontSize="52"
+                      FontStretch="Normal"
+                        HorizontalAlignment="Center" Margin="190,151,0,0" TextWrapping="NoWrap" Text=" " VerticalAlignment="Top" Height="69" Width="170"/>
+        <Button x:ConnectionId='4'                          HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Height="68" Width="185" Background="#330078FF">
+            <StackPanel>
+                <Image Source="bridgeup.png" Height="41" Margin="-93,10,-99,0" />
+            </StackPanel>
+        </Button>
+        <!-- <Button Content="STOP" HorizontalAlignment="Left" Margin="93,505,0,0" VerticalAlignment="Top" Height="57" Width="182" Background="#7F891010" Click="StopButton_Click" />
+        <Button Content="Сonnect" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Background="#7F891010" Width="90" Click="ConnectButton_Click"/>
+        <Button Content="Disconnect" HorizontalAlignment="Left" Margin="131,90,0,0" VerticalAlignment="Top" Background="#7F891010" Width="100" Click="DisconnectButton_Click"/>
+        <Button Content="Clear" HorizontalAlignment="Left" Margin="260,90,0,0" VerticalAlignment="Top" Background="#7F891010" Width="90" Click="ClearButton_Click"/>
+        <ScrollViewer HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Height="200">
+           <TextBlock x:Name="tbStatus" TextWrapping="Wrap" Height="Auto" Text="" FontSize="10" Width="360"/>
+          
+        </ScrollViewer>
+        -->
     </Grid>
 </Page>
 

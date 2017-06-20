@@ -20,6 +20,7 @@ namespace WelcomePage
             int minuites = Convert.ToInt32(Math.Floor(App.CurrentTime / 60));
             int seconds = Convert.ToInt32(Math.Floor(App.CurrentTime % 60));
             var strBuilder = new StringBuilder();
+            strBuilder.Append(" ");
             if (minuites < 10)
             {
                 strBuilder.Append("0");
@@ -53,9 +54,9 @@ namespace WelcomePage
         }
         public static double TimeToDouble(string show)
         {
-            double minuites = Convert.ToDouble(show[0].ToString());
+            double minuites = Convert.ToDouble(show[0].ToString())*10;
             minuites += Convert.ToDouble(show[1]);
-            double seconds = Convert.ToDouble(show[3].ToString());
+            double seconds = Convert.ToDouble(show[3].ToString())*10;
             seconds += Convert.ToDouble(show[4].ToString());
             return (60 * minuites + seconds);
         }

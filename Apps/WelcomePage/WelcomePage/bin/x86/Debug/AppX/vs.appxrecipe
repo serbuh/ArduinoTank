@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>BD0A85942037EDD7C7A15E10092638DFA19E2346996534C5EEFE44E02D94C75F</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>88661ABE34817E55EC1ACB20F4DCD80095B2BCAFDC46335B6F44A5AC34C5D3F7</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>7d9c38cb-e909-471d-a46c-03415cdefda7_1.0.0.0_x86__mqbschq8je8qc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>7d9c38cb-e909-471d-a46c-03415cdefda7_mqbschq8je8qc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>7d9c38cb-e909-471d-a46c-03415cdefda7</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-06-19T21:41:19.197</Modified>
+      <Modified>2017-06-20T20:44:26.348</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\WelcomePage.exe">
       <PackagePath>entrypoint\WelcomePage.exe</PackagePath>
-      <Modified>2017-06-19T21:41:16.151</Modified>
+      <Modified>2017-06-20T20:44:23.381</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\.nuget\packages\JoystickUserControl\1.1.3\lib\uap10.0\JoystickUserControl.dll">
       <PackagePath>JoystickUserControl.dll</PackagePath>
@@ -472,6 +472,24 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-07-22T20:11:12.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-06-20T20:34:36.468</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-06-20T20:34:36.468</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bridgedown.png">
+      <PackagePath>bridgedown.png</PackagePath>
+      <Modified>2017-06-20T18:57:53.193</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bridgeup.png">
+      <PackagePath>bridgeup.png</PackagePath>
+      <Modified>2017-06-20T18:57:53.200</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\again.png">
       <PackagePath>Images\again.png</PackagePath>
       <Modified>2017-06-16T17:03:28.579</Modified>
@@ -495,6 +513,10 @@
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\play.png">
       <PackagePath>Images\play.png</PackagePath>
       <Modified>2017-06-16T17:03:28.643</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\ok.png">
+      <PackagePath>ok.png</PackagePath>
+      <Modified>2017-06-20T19:37:24.782</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -546,6 +568,10 @@
       <PackagePath>Images\Welcome.png</PackagePath>
       <Modified>2017-06-16T17:03:28.571</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\statistics.png">
+      <PackagePath>statistics.png</PackagePath>
+      <Modified>2017-06-20T18:47:46.827</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\background.jpg">
       <PackagePath>Images\background.jpg</PackagePath>
       <Modified>2017-06-16T17:03:28.603</Modified>
@@ -560,7 +586,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\WelcomePage.xr.xml">
       <PackagePath>WelcomePage.xr.xml</PackagePath>
-      <Modified>2017-06-19T20:21:04.091</Modified>
+      <Modified>2017-06-20T20:39:46.771</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -573,11 +599,11 @@
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-06-19T21:41:18.326</Modified>
+      <Modified>2017-06-20T20:44:24.630</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\Core\WelcomePage.exe">
       <PackagePath>WelcomePage.exe</PackagePath>
-      <Modified>2017-06-19T21:41:19.141</Modified>
+      <Modified>2017-06-20T20:44:26.235</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

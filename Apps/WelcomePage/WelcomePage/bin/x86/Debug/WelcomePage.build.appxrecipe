@@ -352,6 +352,20 @@
     <AppxPackagedFile Include="C:\Users\ykuznetc\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bridgedown.png">
+      <PackagePath>bridgedown.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bridgeup.png">
+      <PackagePath>bridgeup.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\again.png">
       <PackagePath>Images\again.png</PackagePath>
     </AppxPackagedFile>
@@ -369,6 +383,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\play.png">
       <PackagePath>Images\play.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\ok.png">
+      <PackagePath>ok.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -408,6 +425,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\Welcome.png">
       <PackagePath>Images\Welcome.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\statistics.png">
+      <PackagePath>statistics.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\background.jpg">
       <PackagePath>Images\background.jpg</PackagePath>

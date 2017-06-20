@@ -60,7 +60,7 @@ namespace WelcomePage
         internal static IMobileServiceTable<TodoItem> usersTable = App.MobileService.GetTable<TodoItem>();
 #endif
 
-        public static string CurrentNick;
+        public static string CurrentNick = "";
         public static double StartTime = 0;
         public static double CurrentTime = 0;
 

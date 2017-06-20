@@ -17,8 +17,10 @@
         </StackPanel>
         <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="135" Margin="-3,212,0,0" VerticalAlignment="Top" Width="361"/>
         <TextBlock Name ="Time" FontSize="60" FontFamily="Trebuchet MS" HorizontalAlignment="Left" Margin="2,212,-2,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Height="135" Width="360"/>
-        <Button Name="Back" Click="NewGame_Click" Margin="0,347,0,234"  Background="#4CFFFF00">
-            <Image Source="Images/again.png" ></Image>
+        <Button Name="Back" HorizontalAlignment="Left" Click="NewGame_Click" Margin="0,347,0,234" VerticalAlignment="Top" Height="68" Width="185" Background="#4CFFFF00">
+            <StackPanel>
+                <Image Source="Images/again.png" ></Image>
+            </StackPanel>
         </Button>
 
     </Grid>
