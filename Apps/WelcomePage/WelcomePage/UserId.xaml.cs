@@ -13,6 +13,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using Windows.Devices.Enumeration;
+using Windows.Devices.Bluetooth.Rfcomm;
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace WelcomePage
@@ -22,6 +25,9 @@ namespace WelcomePage
     /// </summary>
     public sealed partial class UserId : Page
     {
+        private BT_Connect bt_connect;
+        private bool connected = false;
+
         public UserId()
         {
             this.InitializeComponent();
@@ -35,7 +41,8 @@ namespace WelcomePage
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(App.CurrentNick))
+            ConnectToBT();
+            if (!string.IsNullOrWhiteSpace(App.CurrentNick) && connected)
             {
                 App.StartTime = TimeUtils.CurrentTimeMillis();
                 this.Frame.Navigate(typeof(Joystick), null);
@@ -69,5 +76,28 @@ namespace WelcomePage
             }
         }
 
+        private async void ConnectToBT()
+        {
+            try
+            {
+                DeviceInformationCollection devices = await bt_connect.FindPairedDevicesAsync();
+
+                var my_device = devices.Single(x => x.Name == "HC-06");
+
+                bt_connect.IsConnected = await bt_connect.ConnectAsync(my_device);
+
+                if (bt_connect.IsConnected)
+                {
+                    connected = true;
+                    return;
+                }
+                else
+                    this.Frame.Navigate(typeof(MainPage), null);
+            }
+            catch (Exception ex)
+            {
+                this.Frame.Navigate(typeof(MainPage), null); 
+            }
+        }
     }
 }

@@ -32,6 +32,12 @@ namespace WelcomePage
        private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(UserId), null);
-        } 
+        }
+
+        private void OfflineButton_Cick(object sender, RoutedEventArgs e)
+        {
+            App.OfflineMode = true;
+            this.Frame.Navigate(typeof(UserId), null);
+        }
     }
 }

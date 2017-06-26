@@ -46,11 +46,5 @@ namespace WelcomePage
             this.Frame.Navigate(typeof(UserId), null);
         }
 
-
-        //private void NewGame_Click(object sender, RoutedEventArgs e)
-        //{
-        //    this.Frame.Navigate(typeof(UserId), null);
-        //}
-
     }
 }
