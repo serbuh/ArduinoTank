@@ -14,6 +14,7 @@
         <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="111" Margin="0,96,0,0" VerticalAlignment="Top" Width="360" />
         <StackPanel Margin="2,0,-2,0">
             <Image Source="Images/time.png" HorizontalAlignment="Left" Height="100" Margin="4,99,-4,441" />
+            <Button x:Name="button" Content="Button" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </StackPanel>
         <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="135" Margin="-3,212,0,0" VerticalAlignment="Top" Width="361"/>
         <TextBlock Name ="Time" FontSize="60" FontFamily="Trebuchet MS" HorizontalAlignment="Left" Margin="2,212,-2,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Height="135" Width="360"/>
@@ -22,7 +23,7 @@
                 <Image Source="exit.png" Height="66" Margin="-12,0,-25,0" />
             </StackPanel>
         </Button>
-        <Button Name="again" Click="NewGame_Click"  HorizontalAlignment="Left" Margin="119,382,0,0" VerticalAlignment="Top" Background="#33FFFF00" Height="64" Width="120">
+        <Button Name="again" Click="NewGame_Click"  HorizontalAlignment="Left" Margin="119,382,0,0" VerticalAlignment="Top" Background="#3300FF08" Height="64" Width="120">
             <StackPanel>
                 <Image Source="Images/again.png" />
             </StackPanel>

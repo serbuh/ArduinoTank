@@ -4,4 +4,13 @@
     <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
     <UseEmulator>true</UseEmulator>
   </PropertyGroup>
+  <PropertyGroup>
+    <AppIconSource>D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\logo.png</AppIconSource>
+    <Source>D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\logo.png</Source>
+    <SmallTileSource>D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\logo.png</SmallTileSource>
+    <MediumTileSource>D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\logo.png</MediumTileSource>
+    <WideTileSource>D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\logo.png</WideTileSource>
+    <LargeTileSource>D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\logo.png</LargeTileSource>
+    <SplashScreenSource>D:\Arduino\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\logo.png</SplashScreenSource>
+  </PropertyGroup>
 </Project>

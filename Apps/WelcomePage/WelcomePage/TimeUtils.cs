@@ -20,7 +20,7 @@ namespace WelcomePage
             int minuites = Convert.ToInt32(Math.Floor(App.CurrentTime / 60));
             int seconds = Convert.ToInt32(Math.Floor(App.CurrentTime % 60));
             var strBuilder = new StringBuilder();
-            strBuilder.Append(" ");
+            strBuilder.Append("     ");
             if (minuites < 10)
             {
                 strBuilder.Append("0");

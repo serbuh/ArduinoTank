@@ -366,9 +366,6 @@
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bridgeup.png">
       <PackagePath>bridgeup.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\exit.png">
-      <PackagePath>exit.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\again.png">
       <PackagePath>Images\again.png</PackagePath>
     </AppxPackagedFile>
@@ -386,9 +383,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\Images\play.png">
       <PackagePath>Images\play.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\logo.png">
-      <PackagePath>logo.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\ok.png">
       <PackagePath>ok.png</PackagePath>

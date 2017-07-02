@@ -11,7 +11,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.jpg"/>
         </Grid.Background>
-        <Button Click="Button_Click"  HorizontalAlignment="Left" Margin="1,371,0,0" VerticalAlignment="Top" Height="89" Width="188" Background="#7FFFFF7D" >
+        <Button Click="Button_Click"  HorizontalAlignment="Left" Margin="91,371,0,0" VerticalAlignment="Top" Height="89" Width="165" Background="#7FFFFF7D" >
             <StackPanel>
                 <Image Source="Images/Start.png" Height="80" RenderTransformOrigin="0.5,0.662" HorizontalAlignment="Left" Width="145"/>
             </StackPanel>
@@ -21,9 +21,5 @@
         <StackPanel>
             <Image Source="Images/Welcome.png" Height="85" Margin="4,153,-4,407"/>
         </StackPanel>
-        <Button Name="offline" Click ="OfflineButton_Cick" Content="Start Offline" Background="#7FFF7D28" HorizontalAlignment="Left" Margin="188,371,0,0" VerticalAlignment="Top" Width="171" Height="89"/>
-
-
-
     </Grid>
 </Page>

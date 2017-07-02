@@ -44,31 +44,23 @@ namespace WelcomePage
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             //IMobileServiceTableQuery<TodoItem> query = App.usersTable. ;
-            if (App.OfflineMode == false)
+            
+            List<TodoItem> list = await App.usersTable.ToListAsync();
+            CompareMy cmp = new CompareMy();
+            list.Sort(cmp);
+            int size = list.Count();
+            int toScreen = (size < 4 ? size : 4);
+            var strBuilder = new StringBuilder();
+
+            for (int i = 0; i < size; i++)
             {
-                List<TodoItem> list = await App.usersTable.ToListAsync();
-                CompareMy cmp = new CompareMy();
-                list.Sort(cmp);
-                int size = list.Count();
-                int toScreen = (size < 4 ? size : 4);
-                var strBuilder = new StringBuilder();
-
-                for (int i = 0; i < size; i++)
-                {
-                    //await App.usersTable.DeleteAsync(list[i]);
-                    strBuilder.Append(list[i].Nickname).Append(" ").Append(list[i].Time).Append("\n");
-                }
-                if (strBuilder.Length != 0)
-                {
-                    List.Text = strBuilder.ToString();
-                }
+                //await App.usersTable.DeleteAsync(list[i]);
+                strBuilder.Append(list[i].Nickname).Append(" ").Append(list[i].Time).Append("\n");
             }
-
-            else
+            if (strBuilder.Length!=0)
             {
-                List.Text = "Sorry, you are \n in offline mode.";
+                List.Text = strBuilder.ToString();
             }
-
             
         }
 

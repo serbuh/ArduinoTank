@@ -1,5 +1,4 @@
 {
-  "locked": false,
   "version": 2,
   "targets": {
     "UAP,Version=v10.0": {
@@ -42,7 +41,10 @@
         }
       },
       "Microsoft.Bcl.Build/1.0.21": {
-        "type": "package"
+        "type": "package",
+        "build": {
+          "build/Microsoft.Bcl.Build.targets": {}
+        }
       },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
@@ -1984,7 +1986,10 @@
         }
       },
       "Microsoft.Bcl.Build/1.0.21": {
-        "type": "package"
+        "type": "package",
+        "build": {
+          "build/Microsoft.Bcl.Build.targets": {}
+        }
       },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
@@ -3792,7 +3797,10 @@
         }
       },
       "Microsoft.Bcl.Build/1.0.21": {
-        "type": "package"
+        "type": "package",
+        "build": {
+          "build/Microsoft.Bcl.Build.targets": {}
+        }
       },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
@@ -5557,7 +5565,10 @@
         }
       },
       "Microsoft.Bcl.Build/1.0.21": {
-        "type": "package"
+        "type": "package",
+        "build": {
+          "build/Microsoft.Bcl.Build.targets": {}
+        }
       },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
@@ -7374,7 +7385,10 @@
         }
       },
       "Microsoft.Bcl.Build/1.0.21": {
-        "type": "package"
+        "type": "package",
+        "build": {
+          "build/Microsoft.Bcl.Build.targets": {}
+        }
       },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
@@ -9139,7 +9153,10 @@
         }
       },
       "Microsoft.Bcl.Build/1.0.21": {
-        "type": "package"
+        "type": "package",
+        "build": {
+          "build/Microsoft.Bcl.Build.targets": {}
+        }
       },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
@@ -10956,7 +10973,10 @@
         }
       },
       "Microsoft.Bcl.Build/1.0.21": {
-        "type": "package"
+        "type": "package",
+        "build": {
+          "build/Microsoft.Bcl.Build.targets": {}
+        }
       },
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
@@ -12686,10 +12706,10 @@
     "JoystickUserControl/1.1.3": {
       "sha512": "mXMufQn4UwvRueppfBcSdGZu8xQAGithououdQp3a2XNd9oWpVUDuCMbi7cI3w45iZQDqCI/Gr1XKRPelO1KCQ==",
       "type": "package",
-      "path": "JoystickUserControl/1.1.3",
+      "path": "joystickusercontrol/1.1.3",
       "files": [
-        "JoystickUserControl.1.1.3.nupkg.sha512",
-        "JoystickUserControl.nuspec",
+        "joystickusercontrol.1.1.3.nupkg.sha512",
+        "joystickusercontrol.nuspec",
         "lib/netcore50/JoystickUserControl.dll",
         "lib/uap10.0/JoystickUserControl.dll",
         "lib/uap10.0/JoystickUserControl.pdb",
@@ -16317,6 +16337,44 @@
     ],
     "UAP,Version=v10.0": []
   },
-  "tools": {},
-  "projectFileToolGroups": {}
+  "packageFolders": {
+    "C:\\Users\\Buh\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "D:\\Arduino\\ArduinoTank\\Apps\\WelcomePage\\WelcomePage\\WelcomePage.csproj",
+      "projectName": "WelcomePage",
+      "projectPath": "D:\\Arduino\\ArduinoTank\\Apps\\WelcomePage\\WelcomePage\\WelcomePage.csproj",
+      "projectJsonPath": "D:\\Arduino\\ArduinoTank\\Apps\\WelcomePage\\WelcomePage\\project.json",
+      "projectStyle": "ProjectJson"
+    },
+    "dependencies": {
+      "JoystickUserControl": "1.1.3",
+      "Microsoft.Azure.Mobile.Client": "3.1.0",
+      "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
+    },
+    "frameworks": {
+      "uap10.0": {}
+    },
+    "runtimes": {
+      "win10-arm": {
+        "#import": []
+      },
+      "win10-arm-aot": {
+        "#import": []
+      },
+      "win10-x64": {
+        "#import": []
+      },
+      "win10-x64-aot": {
+        "#import": []
+      },
+      "win10-x86": {
+        "#import": []
+      },
+      "win10-x86-aot": {
+        "#import": []
+      }
+    }
+  }
 }
