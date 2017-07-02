@@ -203,5 +203,29 @@ namespace WelcomePage
         //    }
         //    PrintStatusAppend(builder.ToString());
         //}
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            // For debug uncomment
+            //tbStatus.Text = "";
+        }
+
+        private void PrintStatusAppend(string msg)
+        {
+            // For debug uncomment
+            //tbStatus.Text += msg + Environment.NewLine;
+        }
+
+        private void print_devices(DeviceInformationCollection devices)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("#(Paired BT devices) = " + devices.Count);
+            foreach (var _device in devices)
+            {
+                builder.Append(Environment.NewLine + _device.Name);
+            }
+            PrintStatusAppend(builder.ToString());
+        }
+        //TODO: Clock; Getting string from Arduino
     }
 }
