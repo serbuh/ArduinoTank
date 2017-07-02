@@ -28,12 +28,12 @@
         <Button Content="STOP" HorizontalAlignment="Left" Margin="93,505,0,0" VerticalAlignment="Top" Height="57" Width="182" Background="#7F891010" Click="StopButton_Click" />
         <Button Content="Сonnect" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Background="#7F891010" Width="90" Click="ConnectButton_Click"/>
         <Button Content="Disconnect" HorizontalAlignment="Left" Margin="131,90,0,0" VerticalAlignment="Top" Background="#7F891010" Width="100" Click="DisconnectButton_Click"/>
-        <Button Content="Clear" HorizontalAlignment="Left" Margin="260,90,0,0" VerticalAlignment="Top" Background="#7F891010" Width="90" Click="ClearButton_Click"/>
+        <!--<Button Content="Clear" HorizontalAlignment="Left" Margin="260,90,0,0" VerticalAlignment="Top" Background="#7F891010" Width="90" Click="ClearButton_Click"/>
         <ScrollViewer HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Height="200">
            <TextBlock x:Name="tbStatus" TextWrapping="Wrap" Height="Auto" Text="" FontSize="10" Width="360"/>
           
         </ScrollViewer>
-
+-->
         <Button Name="BridgeUp" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" Height="68" Width="185" Background="#330078FF">
             <StackPanel>
                 <Image Source="bridgeup.png" Height="41" Margin="-93,10,-99,0" />
