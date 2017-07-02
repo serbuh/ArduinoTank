@@ -25,8 +25,8 @@ namespace WelcomePage
     /// </summary>
     public sealed partial class UserId : Page
     {
-        private BT_Connect bt_connect;
-        private bool connected = false;
+        //private BT_Connect bt_connect;
+        //private bool connected = false;
 
         public UserId()
         {
@@ -41,8 +41,8 @@ namespace WelcomePage
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            ConnectToBT();
-            if (!string.IsNullOrWhiteSpace(App.CurrentNick) && connected)
+            //ConnectToBT();
+            if (!string.IsNullOrWhiteSpace(App.CurrentNick))
             {
                 App.StartTime = TimeUtils.CurrentTimeMillis();
                 this.Frame.Navigate(typeof(Joystick), null);
@@ -76,28 +76,28 @@ namespace WelcomePage
             }
         }
 
-        private async void ConnectToBT()
-        {
-            try
-            {
-                DeviceInformationCollection devices = await bt_connect.FindPairedDevicesAsync();
+        //private async void ConnectToBT()
+        //{
+        //    try
+        //    {
+        //        DeviceInformationCollection devices = await bt_connect.FindPairedDevicesAsync();
 
-                var my_device = devices.Single(x => x.Name == "HC-06");
+        //        var my_device = devices.Single(x => x.Name == "HC-06");
 
-                bt_connect.IsConnected = await bt_connect.ConnectAsync(my_device);
+        //        bt_connect.IsConnected = await bt_connect.ConnectAsync(my_device);
 
-                if (bt_connect.IsConnected)
-                {
-                    connected = true;
-                    return;
-                }
-                else
-                    this.Frame.Navigate(typeof(MainPage), null);
-            }
-            catch (Exception ex)
-            {
-                this.Frame.Navigate(typeof(MainPage), null); 
-            }
-        }
+        //        if (bt_connect.IsConnected)
+        //        {
+        //            connected = true;
+        //            return;
+        //        }
+        //        else
+        //            this.Frame.Navigate(typeof(MainPage), null);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        this.Frame.Navigate(typeof(MainPage), null); 
+        //    }
+        //}
     }
 }

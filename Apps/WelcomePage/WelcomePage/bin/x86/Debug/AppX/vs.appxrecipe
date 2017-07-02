@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-06-20T20:39:57.564</Modified>
+      <Modified>2017-07-02T18:00:23.702</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\WelcomePage.exe">
       <PackagePath>entrypoint\WelcomePage.exe</PackagePath>
-      <Modified>2017-06-26T09:19:39.295</Modified>
+      <Modified>2017-07-02T17:57:51.925</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\.nuget\packages\JoystickUserControl\1.1.3\lib\uap10.0\JoystickUserControl.dll">
       <PackagePath>JoystickUserControl.dll</PackagePath>
@@ -611,7 +611,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ykuznetc\Documents\YULIA\Technion Studies\Spring 2017\Arduino Project\workspace\ArduinoTank\Apps\WelcomePage\WelcomePage\bin\x86\Debug\Core\WelcomePage.exe">
       <PackagePath>WelcomePage.exe</PackagePath>
-      <Modified>2017-06-20T19:07:18.390</Modified>
+      <Modified>2017-07-02T18:00:23.655</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

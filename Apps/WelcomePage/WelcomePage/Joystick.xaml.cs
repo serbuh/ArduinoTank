@@ -31,16 +31,23 @@ namespace WelcomePage
         private bool isJoystickPressed;
         private bool isBridgePressed;
         private BT_Connect bt_connect;
-
+        private bool connected = false;
 
         public Joystick()
         {
-            App.CurrentTime = TimeUtils.CurrentTimeMillis();//DateTime.UtcNow.Second;
-            this.InitializeComponent();
+            //App.CurrentTime = TimeUtils.CurrentTimeMillis();
             bt_connect = BT_Connect.getBT_Conn();
+            this.InitializeComponent();
         }
 
-
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            await this.ConnectToBT();
+            if (connected == true)
+                App.CurrentTime = TimeUtils.CurrentTimeMillis();
+            else
+                this.Frame.Navigate(typeof(MainPage), null);
+        }
         public double Map(double x, double in_min, double in_max, double out_min, double out_max)
         {
             return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -69,11 +76,14 @@ namespace WelcomePage
                 {
                     strBuilder.Append("512,512#");
                 }
-                await bt_connect.BTSendAsync(strBuilder.ToString());
-                strBuilder.Clear();
-                await Task.Delay(TimeSpan.FromMilliseconds(150));
-                App.CurrentTime = (TimeUtils.CurrentTimeMillis() - App.StartTime) / 1000.0;
-                Time.Text = TimeUtils.CurrentTimeToShow();
+                if (bt_connect.IsConnected)
+                {
+                    await bt_connect.BTSendAsync(strBuilder.ToString());
+                    strBuilder.Clear();
+                    await Task.Delay(TimeSpan.FromMilliseconds(150));
+                    App.CurrentTime = (TimeUtils.CurrentTimeMillis() - App.StartTime) / 1000.0;
+                    Time.Text = TimeUtils.CurrentTimeToShow();
+                }
             }
         }
 
@@ -92,18 +102,49 @@ namespace WelcomePage
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
             if (App.OfflineMode == false) {
-                this.AddUser();
+                {
+                    this.AddUser();
+                }
             }
             this.Frame.Navigate(typeof(Score), null);
         }
 
         private async void AddUser()
         {
-            TodoItem todoItem = new TodoItem { Nickname = App.CurrentNick, Time = TimeUtils.TimeToShow(App.CurrentTime) };
-            await App.usersTable.InsertAsync(todoItem);
+            try
+            {
+                TodoItem todoItem = new TodoItem { Nickname = App.CurrentNick, Time = TimeUtils.TimeToShow(App.CurrentTime) };
+                await App.usersTable.InsertAsync(todoItem);
+            }
+            catch (Exception ex)
+            {
+                App.OfflineMode = true;
+            }
         }
 
+        private async Task ConnectToBT()
+        {
+            try
+            {
+                DeviceInformationCollection devices = await bt_connect.FindPairedDevicesAsync();
 
+                var my_device = devices.Single(x => x.Name == "HC-06");
+
+                bt_connect.IsConnected = await bt_connect.ConnectAsync(my_device);
+
+                if (bt_connect.IsConnected)
+                {
+                    connected = true;
+                    return;
+                }
+                else
+                    return;
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
+        }
 
         //private async void ConnectButton_Click(object sender, RoutedEventArgs e)
         //{
