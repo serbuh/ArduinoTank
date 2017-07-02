@@ -142,12 +142,14 @@ namespace WelcomePage
 
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
-            tbStatus.Text = "";
+            // For debug uncomment
+            //tbStatus.Text = "";
         }
 
         private void PrintStatusAppend(string msg)
         {
-            tbStatus.Text += msg + Environment.NewLine;
+            // For debug uncomment
+            //tbStatus.Text += msg + Environment.NewLine;
         }
 
         private void print_devices(DeviceInformationCollection devices)
