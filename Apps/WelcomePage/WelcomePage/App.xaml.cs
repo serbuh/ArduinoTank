@@ -63,7 +63,7 @@ namespace WelcomePage
         public static string CurrentNick = "";
         public static double StartTime = 0;
         public static double CurrentTime = 0;
-
+        public static bool OfflineMode = false;
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG

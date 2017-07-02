@@ -91,14 +91,25 @@ namespace WelcomePage
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
-            this.AddUser();
+            if (!App.OfflineMode)
+            {
+                this.AddUser();
+            }
             this.Frame.Navigate(typeof(Score), null);
         }
 
         private async void AddUser()
         {
-            TodoItem todoItem = new TodoItem { Nickname = App.CurrentNick, Time = TimeUtils.TimeToShow(App.CurrentTime) };
-            await App.usersTable.InsertAsync(todoItem);
+            try
+            {
+                TodoItem todoItem = new TodoItem { Nickname = App.CurrentNick, Time = TimeUtils.TimeToShow(App.CurrentTime) };
+                await App.usersTable.InsertAsync(todoItem);
+            }
+            catch (Exception ex)
+            {
+                App.OfflineMode = true;
+            }
+            
         }
 
 

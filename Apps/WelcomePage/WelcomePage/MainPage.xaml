@@ -11,11 +11,12 @@
         <Grid.Background>
             <ImageBrush ImageSource="Images/background.jpg"/>
         </Grid.Background>
-        <Button Click="Button_Click"  HorizontalAlignment="Left" Margin="91,371,0,0" VerticalAlignment="Top" Height="89" Width="165" Background="#7FFFFF7D" >
+        <Button Click="Button_Click"  HorizontalAlignment="Left" Margin="1,371,0,0" VerticalAlignment="Top" Height="89" Width="188" Background="#7FFFFF7D" >
             <StackPanel>
                 <Image Source="Images/Start.png" Height="80" RenderTransformOrigin="0.5,0.662" HorizontalAlignment="Left" Width="145"/>
             </StackPanel>
         </Button>
+        <Button Name="offline" Click ="OfflineButton_Cick" Content="Start Offline" Background="#7FFF7D28" HorizontalAlignment="Left" Margin="188,371,0,0" VerticalAlignment="Top" Width="171" Height="89"/>
         <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="115" Margin="0,135,0,0" Stroke="Black" VerticalAlignment="Top" Width="360" />
 
         <StackPanel>
