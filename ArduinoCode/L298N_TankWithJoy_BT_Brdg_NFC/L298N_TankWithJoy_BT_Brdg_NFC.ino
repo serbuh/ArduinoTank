@@ -74,6 +74,8 @@ Servo brdgServo;
 PN532_I2C pn532i2c(Wire);
 PN532 nfc(pn532i2c);
 
+const int finishLed = 2;
+
 //======================== Setup ========================
 
 void setup() {
@@ -114,6 +116,8 @@ void setup() {
   BTserial.println();
 
   //--------------- NFC Module ---------------
+  pinMode(finishLed, OUTPUT);
+  digitalWrite(finishLed, LOW);
   nfc.begin();
   uint32_t versiondata = nfc.getFirmwareVersion();
   if (! versiondata) {
@@ -432,5 +436,10 @@ void finish(){
   Serial.println("FINISH");
   BTserial.println("FINISH");
   LR_to_Motors(0, 0);
-  delay(3000);
+  while(1){
+    digitalWrite(finishLed, HIGH);
+    delay(300);
+    digitalWrite(finishLed, LOW);
+    delay(300);
+  }
 }
