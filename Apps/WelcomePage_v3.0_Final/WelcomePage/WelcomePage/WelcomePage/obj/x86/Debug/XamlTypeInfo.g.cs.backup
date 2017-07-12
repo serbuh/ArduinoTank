@@ -13,7 +13,7 @@ namespace WelcomePage
 {
     public partial class App : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-    private global::WelcomePage.WelcomePage_XamlTypeInfo.XamlTypeInfoProvider _provider;
+    private global::WelcomePage.overTank_XamlTypeInfo.XamlTypeInfoProvider _provider;
 
         /// <summary>
         /// GetXamlType(Type)
@@ -22,7 +22,7 @@ namespace WelcomePage
         {
             if(_provider == null)
             {
-                _provider = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlTypeInfoProvider();
+                _provider = new global::WelcomePage.overTank_XamlTypeInfo.XamlTypeInfoProvider();
             }
             return _provider.GetXamlTypeByType(type);
         }
@@ -34,7 +34,7 @@ namespace WelcomePage
         {
             if(_provider == null)
             {
-                _provider = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlTypeInfoProvider();
+                _provider = new global::WelcomePage.overTank_XamlTypeInfo.XamlTypeInfoProvider();
             }
             return _provider.GetXamlTypeByName(fullName);
         }
@@ -49,7 +49,7 @@ namespace WelcomePage
     }
 }
 
-namespace WelcomePage.WelcomePage_XamlTypeInfo
+namespace WelcomePage.overTank_XamlTypeInfo
 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -67,7 +67,7 @@ namespace WelcomePage.WelcomePage_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
-            var userXamlType = xamlType as global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType;
+            var userXamlType = xamlType as global::WelcomePage.overTank_XamlTypeInfo.XamlUserType;
             if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
             {
                 global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
@@ -103,7 +103,7 @@ namespace WelcomePage.WelcomePage_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
-            var userXamlType = xamlType as global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType;
+            var userXamlType = xamlType as global::WelcomePage.overTank_XamlTypeInfo.XamlUserType;
             if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
             {
                 global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
@@ -234,8 +234,8 @@ namespace WelcomePage.WelcomePage_XamlTypeInfo
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
-            global::WelcomePage.WelcomePage_XamlTypeInfo.XamlSystemBaseType xamlType = null;
-            global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType userType;
+            global::WelcomePage.overTank_XamlTypeInfo.XamlSystemBaseType xamlType = null;
+            global::WelcomePage.overTank_XamlTypeInfo.XamlUserType userType;
             string typeName = _typeNameTable[typeIndex];
             global::System.Type type = _typeTable[typeIndex];
 
@@ -243,7 +243,7 @@ namespace WelcomePage.WelcomePage_XamlTypeInfo
             {
 
             case 0:   //  JoystickUserControl.Joystick
-                userType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType = new global::WelcomePage.overTank_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
                 userType.Activator = Activate_0_Joystick;
                 userType.AddMemberName("InnerDiameter");
                 userType.AddMemberName("OuterDiameter");
@@ -266,15 +266,15 @@ namespace WelcomePage.WelcomePage_XamlTypeInfo
                 break;
 
             case 1:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::WelcomePage.overTank_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 2:   //  Double
-                xamlType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::WelcomePage.overTank_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 3:   //  JoystickUserControl.Joystick.JoystickTheme
-                userType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType = new global::WelcomePage.overTank_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("AccentTheme", global::JoystickUserControl.Joystick.JoystickTheme.AccentTheme);
                 userType.AddEnumValue("Dark", global::JoystickUserControl.Joystick.JoystickTheme.Dark);
                 userType.AddEnumValue("Light", global::JoystickUserControl.Joystick.JoystickTheme.Light);
@@ -282,65 +282,65 @@ namespace WelcomePage.WelcomePage_XamlTypeInfo
                 break;
 
             case 4:   //  System.Enum
-                userType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType = new global::WelcomePage.overTank_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
             case 5:   //  System.ValueType
-                userType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::WelcomePage.overTank_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
             case 6:   //  Object
-                xamlType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::WelcomePage.overTank_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 7:   //  Windows.UI.Xaml.Media.Brush
-                xamlType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::WelcomePage.overTank_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 8:   //  Windows.UI.Xaml.Media.DoubleCollection
-                xamlType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::WelcomePage.overTank_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 9:   //  Windows.UI.Xaml.Media.PenLineCap
-                xamlType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::WelcomePage.overTank_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 10:   //  WelcomePage.Joystick
-                userType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::WelcomePage.overTank_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_10_Joystick;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 11:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::WelcomePage.overTank_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 12:   //  WelcomePage.MainPage
-                userType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::WelcomePage.overTank_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_12_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 13:   //  WelcomePage.Score
-                userType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::WelcomePage.overTank_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_13_Score;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 14:   //  WelcomePage.Statistics
-                userType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::WelcomePage.overTank_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_14_Statistics;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 15:   //  WelcomePage.UserId
-                userType = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::WelcomePage.overTank_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_15_UserId;
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -567,124 +567,124 @@ namespace WelcomePage.WelcomePage_XamlTypeInfo
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
-            global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember xamlMember = null;
-            global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType userType;
+            global::WelcomePage.overTank_XamlTypeInfo.XamlMember xamlMember = null;
+            global::WelcomePage.overTank_XamlTypeInfo.XamlUserType userType;
 
             switch (longMemberName)
             {
             case "JoystickUserControl.Joystick.InnerDiameter":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "InnerDiameter", "Double");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "InnerDiameter", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_0_Joystick_InnerDiameter;
                 xamlMember.Setter = set_0_Joystick_InnerDiameter;
                 break;
             case "JoystickUserControl.Joystick.OuterDiameter":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "OuterDiameter", "Double");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "OuterDiameter", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_1_Joystick_OuterDiameter;
                 xamlMember.Setter = set_1_Joystick_OuterDiameter;
                 break;
             case "JoystickUserControl.Joystick.Theme":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "Theme", "JoystickUserControl.Joystick.JoystickTheme");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "Theme", "JoystickUserControl.Joystick.JoystickTheme");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_2_Joystick_Theme;
                 xamlMember.Setter = set_2_Joystick_Theme;
                 break;
             case "JoystickUserControl.Joystick.XValue":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "XValue", "Double");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "XValue", "Double");
                 xamlMember.Getter = get_3_Joystick_XValue;
                 xamlMember.SetIsReadOnly();
                 break;
             case "JoystickUserControl.Joystick.YValue":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "YValue", "Double");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "YValue", "Double");
                 xamlMember.Getter = get_4_Joystick_YValue;
                 xamlMember.SetIsReadOnly();
                 break;
             case "JoystickUserControl.Joystick.InnerFill":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "InnerFill", "Windows.UI.Xaml.Media.Brush");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "InnerFill", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_5_Joystick_InnerFill;
                 xamlMember.Setter = set_5_Joystick_InnerFill;
                 break;
             case "JoystickUserControl.Joystick.InnerStroke":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "InnerStroke", "Windows.UI.Xaml.Media.Brush");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "InnerStroke", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_6_Joystick_InnerStroke;
                 xamlMember.Setter = set_6_Joystick_InnerStroke;
                 break;
             case "JoystickUserControl.Joystick.InnerStrokeThickness":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "InnerStrokeThickness", "Double");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "InnerStrokeThickness", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_7_Joystick_InnerStrokeThickness;
                 xamlMember.Setter = set_7_Joystick_InnerStrokeThickness;
                 break;
             case "JoystickUserControl.Joystick.InnerStrokeDashOffset":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "InnerStrokeDashOffset", "Double");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "InnerStrokeDashOffset", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_8_Joystick_InnerStrokeDashOffset;
                 xamlMember.Setter = set_8_Joystick_InnerStrokeDashOffset;
                 break;
             case "JoystickUserControl.Joystick.InnerStrokeDashArray":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "InnerStrokeDashArray", "Windows.UI.Xaml.Media.DoubleCollection");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "InnerStrokeDashArray", "Windows.UI.Xaml.Media.DoubleCollection");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_9_Joystick_InnerStrokeDashArray;
                 xamlMember.Setter = set_9_Joystick_InnerStrokeDashArray;
                 break;
             case "JoystickUserControl.Joystick.InnerStrokeDashCap":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "InnerStrokeDashCap", "Windows.UI.Xaml.Media.PenLineCap");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "InnerStrokeDashCap", "Windows.UI.Xaml.Media.PenLineCap");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_10_Joystick_InnerStrokeDashCap;
                 xamlMember.Setter = set_10_Joystick_InnerStrokeDashCap;
                 break;
             case "JoystickUserControl.Joystick.OuterFill":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "OuterFill", "Windows.UI.Xaml.Media.Brush");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "OuterFill", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_11_Joystick_OuterFill;
                 xamlMember.Setter = set_11_Joystick_OuterFill;
                 break;
             case "JoystickUserControl.Joystick.OuterStroke":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "OuterStroke", "Windows.UI.Xaml.Media.Brush");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "OuterStroke", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_12_Joystick_OuterStroke;
                 xamlMember.Setter = set_12_Joystick_OuterStroke;
                 break;
             case "JoystickUserControl.Joystick.OuterStrokeThickness":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "OuterStrokeThickness", "Double");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "OuterStrokeThickness", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_13_Joystick_OuterStrokeThickness;
                 xamlMember.Setter = set_13_Joystick_OuterStrokeThickness;
                 break;
             case "JoystickUserControl.Joystick.OuterStrokeDashArray":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "OuterStrokeDashArray", "Windows.UI.Xaml.Media.DoubleCollection");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "OuterStrokeDashArray", "Windows.UI.Xaml.Media.DoubleCollection");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_14_Joystick_OuterStrokeDashArray;
                 xamlMember.Setter = set_14_Joystick_OuterStrokeDashArray;
                 break;
             case "JoystickUserControl.Joystick.OuterStrokeDashOffset":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "OuterStrokeDashOffset", "Double");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "OuterStrokeDashOffset", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_15_Joystick_OuterStrokeDashOffset;
                 xamlMember.Setter = set_15_Joystick_OuterStrokeDashOffset;
                 break;
             case "JoystickUserControl.Joystick.OuterStrokeDashCap":
-                userType = (global::WelcomePage.WelcomePage_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
-                xamlMember = new global::WelcomePage.WelcomePage_XamlTypeInfo.XamlMember(this, "OuterStrokeDashCap", "Windows.UI.Xaml.Media.PenLineCap");
+                userType = (global::WelcomePage.overTank_XamlTypeInfo.XamlUserType)GetXamlTypeByName("JoystickUserControl.Joystick");
+                xamlMember = new global::WelcomePage.overTank_XamlTypeInfo.XamlMember(this, "OuterStrokeDashCap", "Windows.UI.Xaml.Media.PenLineCap");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_16_Joystick_OuterStrokeDashCap;
                 xamlMember.Setter = set_16_Joystick_OuterStrokeDashCap;
@@ -743,9 +743,9 @@ namespace WelcomePage.WelcomePage_XamlTypeInfo
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class XamlUserType : global::WelcomePage.WelcomePage_XamlTypeInfo.XamlSystemBaseType
+    internal class XamlUserType : global::WelcomePage.overTank_XamlTypeInfo.XamlSystemBaseType
     {
-        global::WelcomePage.WelcomePage_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::WelcomePage.overTank_XamlTypeInfo.XamlTypeInfoProvider _provider;
         global::Windows.UI.Xaml.Markup.IXamlType _baseType;
         bool _isArray;
         bool _isMarkupExtension;
@@ -759,7 +759,7 @@ namespace WelcomePage.WelcomePage_XamlTypeInfo
         global::System.Collections.Generic.Dictionary<string, string> _memberNames;
         global::System.Collections.Generic.Dictionary<string, object> _enumValues;
 
-        public XamlUserType(global::WelcomePage.WelcomePage_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
+        public XamlUserType(global::WelcomePage.overTank_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
             :base(fullName, fullType)
         {
             _provider = provider;
@@ -951,7 +951,7 @@ namespace WelcomePage.WelcomePage_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlMember : global::Windows.UI.Xaml.Markup.IXamlMember
     {
-        global::WelcomePage.WelcomePage_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::WelcomePage.overTank_XamlTypeInfo.XamlTypeInfoProvider _provider;
         string _name;
         bool _isAttachable;
         bool _isDependencyProperty;
@@ -960,7 +960,7 @@ namespace WelcomePage.WelcomePage_XamlTypeInfo
         string _typeName;
         string _targetTypeName;
 
-        public XamlMember(global::WelcomePage.WelcomePage_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
+        public XamlMember(global::WelcomePage.overTank_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
         {
             _name = name;
             _typeName = typeName;
