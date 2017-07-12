@@ -1,1 +1,0 @@
-D:\Arduino\ArduinoTank\Apps\App1\App1\App1.csproj;arm

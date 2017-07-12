@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="WelcomePage.UserId"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WelcomePage"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid RenderTransformOrigin="0.488,0.914">
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/background.jpg"/>
+        </Grid.Background>
+
+        <Button Click="StatisticsButton_Click" HorizontalAlignment="Left" Margin="0,356,0,0" VerticalAlignment="Top" Width="180" Background="#3300FF00" >
+            <StackPanel>
+                <Image Source="Images/statistics.png" Height="43" RenderTransformOrigin="0.5,0.662" HorizontalAlignment="Left" Width="145"/>
+            </StackPanel>
+        </Button>
+        <Button Click="PlayButton_Click" HorizontalAlignment="Left" Margin="180,356,0,0" VerticalAlignment="Top" Width="180" Background="#33FFFF78">
+            <StackPanel>
+                <Image Source="Images/play.png" Height="43" />
+            </StackPanel>
+        </Button>
+        <Rectangle Fill="#7FF4F4F5" HorizontalAlignment="Left" Height="111" Margin="0,88,0,0" VerticalAlignment="Top" Width="360" />
+        <StackPanel Margin="-3,0,3,0">
+            <Image Source="Images/Enter.png" HorizontalAlignment="Left" Height="100" Margin="4,99,-4,441" />
+        </StackPanel>
+        <TextBox Name="Nickname" FontFamily="Trebuchet MS" FontSize="40" HorizontalAlignment="Left" Margin="40,208,0,0" TextWrapping="Wrap" Text="  " VerticalAlignment="Top" Height="89" Width="175" SelectionHighlightColor="#006B69D6"/>
+        <Button Name="OK"  Click="OK_Click" HorizontalAlignment="Left" Margin="233,208,0,0" VerticalAlignment="Top" Height="89" Width="85" Background="#330000FF">
+            <StackPanel Margin="-10,-27.333,-10,-28">
+                <Image Source="ok.png" Height="117" Margin="-12,15,-42,0" />
+            </StackPanel>
+        </Button>
+        <TextBlock Name="Error"  FontFamily="Trebuchet MS" FontSize="23" IsColorFontEnabled="True" HorizontalAlignment="Center" Margin="5,411,2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="353" />
+
+
+
+    </Grid>
+</Page>
